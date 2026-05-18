@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 /* Couleurs */
 :root {
     --primary-color: rgb(26, 26, 26);
@@ -44,6 +51,11 @@
     font-style: italic;
 }
 
+
+/* Ajouts pour compléter Bootstrap */
+.w-15 {
+    width: 15%;
+}
 
 
 
@@ -283,6 +295,49 @@ header {
     padding: 1rem;
 }
 
+
+/* Page Tournois */
+
+.affiche-tournoi {
+    height: 300px;
+    width: 180px !important;
+    object-fit: cover;
+}
+
+.colonnes-affiches {
+    margin-left: -20px;
+}
+
+.table-tournoi {
+    --bs-table-bg: transparent !important;
+    --bs-table-border-color: var(--or-color) !important;
+}
+
+
+.table-tournoi td {
+    border: 2px solid var(--or-color) !important;
+    background-color: transparent !important;
+}
+
+.table-tournoi th {
+    border: 2px solid var(--or-color) !important;
+    background-color: transparent !important;
+    color: var(--or-color);
+}
+
+.table-tournoi td:empty::after {
+    content: '✕';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--or-color);
+    font-size: 1.2rem;
+}
+
+.table-tournoi td:empty {
+    text-align: center;
+    vertical-align: middle;
+}
 
 
 
