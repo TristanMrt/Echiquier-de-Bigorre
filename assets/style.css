@@ -1,6 +1,6 @@
 /* Couleurs */
 :root {
-    --primary-color: #1A1A1A;
+    --primary-color: rgb(26, 26, 26);
     --secondary-color: #F5F0E8;
     --bois-color: #7B5B3A;
     --or-color: #C9A84C;
@@ -26,6 +26,23 @@
   font-style: normal;
 }
 
+.sous-titre {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.size-titre {
+    font-size: 3rem;
+}
+
+.légende {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: italic;
+}
 
 
 
@@ -94,7 +111,10 @@ header {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: radial-gradient(ellipse at center,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0.9) 100%
+    );
 }
 
 .hero-content {
@@ -112,6 +132,155 @@ header {
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.2rem, 2.5vw, 1.8rem);
     color: var(--text-white);
+}
+.separateur {
+    height: 80px;
+}
+
+/* Section Tournois */
+.carousel-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: scrollLeft 20s linear infinite;
+}
+
+.carousel-img {
+    height: 350px;
+    width: auto;
+}
+
+.carousel-track-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track-reverse {
+    animation: scrollRight 20s linear infinite;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-25%); }
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(-25%); }
+    100% { transform: translateX(0); }
+}
+
+/* Section Actus */
+
+/* Carte principale */
+.carte-principale {
+    background: linear-gradient(135deg, #1a6b3c 0%, #0d4a6b 50%, #1a3a6b 100%);
+    border: 2px solid var(--or-color);
+    min-height: 450px;
+    position: relative;
+    overflow: hidden;
+    transition: none;
+}
+
+.carte-principale::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    transition: background 0.3s ease;
+    border-radius: inherit;
+}
+
+.carte-principale:hover::before {
+    background: linear-gradient(to left,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0) 50%
+    );
+}
+
+.carte-principale::after {
+    content: '';
+    background-image: url('../assets/img/fleche-droite.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%) translateX(-10px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.carte-principale:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Cartes liens */
+.carte-lien {
+    background: linear-gradient(135deg, #1a6b3c 0%, #0d4a6b 100%);
+    border: 2px solid var(--or-color);
+    color: var(--text-white);
+    position: relative;
+    overflow: hidden;
+    transition: none;
+}
+
+.carte-lien::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    transition: background 0.3s ease;
+    border-radius: inherit;
+}
+
+.carte-lien:hover::before {
+    background: linear-gradient(to left,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0) 50%
+    );
+}
+
+.carte-lien::after {
+    content: '';
+    background-image: url('../assets/img/fleche-droite.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    opacity: 1;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.carte-lien:hover::after {
+    transform: translateY(-50%) translateX(5px);
+}
+
+
+/* Page Histoire */
+
+.espace-sommaire {
+    margin-top: 150px;
+    margin-bottom : 150px;
+}
+
+.encadre {
+    border: 2px solid var(--or-color) !important;
+    padding: 1rem;
 }
 
 
@@ -146,6 +315,15 @@ header {
     color: var(--text-white);
 }
 
+.text-custom-or {
+    color: var(--or-color);
+}
+
+
+.border-custom-or {
+    border: 2px solid var(--or-color);
+}
+
 .link-white {
     color: var(--text-white);
     text-decoration: none;
@@ -161,9 +339,6 @@ header {
     color: var(--text-white);
     border: 2px solid var(--bois-color);
     border-radius: 50px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
     text-decoration: none;
     transition: background 0.2s, color 0.2s;
 }
@@ -176,15 +351,45 @@ header {
 .btn-noir {
     background-color: var(--primary-color);
     color: var(--text-white);
-    border-radius: 50px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
+    border-radius: 15px;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: background 0.2s, color 0.2s;
+}
+
+.btn-noir span {
+    transition: transform 0.3s ease;
+}
+
+.btn-noir::after {
+    content: '';
+    background-image: url('../assets/img/fleche-droite.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-10px);
 }
 
 .btn-noir:hover {
     background-color: var(--btn-noir-hover);
     color: var(--text-white);
+}
+
+.btn-noir:hover span {
+    transform: translateX(-15px);
+}
+
+.btn-noir:hover::after {
+    opacity: 1;
+    transform: translateX(0);
 }
