@@ -17,51 +17,92 @@
 </head>
 
 <body class="inter bg-custom-secondary">
+
+    <!-- ===================== HEADER / NAVBAR ===================== -->
     <header>
-        <div class="container col-10">
-            <div class="row justify-content-center">
-                <div class="pt-4">
-                    <nav class="navbar navbar-expand-lg navbar-custom px-5 py-3 rounded-4">
-                        <div class="container-fluid px-0 d-flex align-items-center">
+        <div class="container-fluid px-3 px-md-4">
+            <div class="pt-3 pt-md-4">
+                <nav class="navbar navbar-expand-lg navbar-custom px-3 px-md-5 py-3 rounded-4">
+                    <div class="container-fluid px-0 d-flex align-items-center">
 
-                            <a class="navbar-brand p-0 me-0" href="./index.html">
-                                <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
-                            </a>
+                        <!-- Logo -->
+                        <a class="navbar-brand p-0 me-0" href="./index.html">
+                            <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
+                        </a>
 
-                            <ul class="navbar-nav mx-auto d-flex flex-row gap-5 mb-0">
+                        <!-- Burger button (visible on mobile) -->
+                        <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Nav links + CTA (collapse on mobile) -->
+                        <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
+                            <ul
+                                class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
                                 <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html">Histoire</a></li>
                                 <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html">Tournois</a></li>
                                 <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html">Tarifs</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html">Actualités</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html">Actualités</a>
+                                </li>
                             </ul>
-
-                            <a href="#" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
-
+                            <div class="d-flex justify-content-center mb-2 mb-lg-0">
+                                <a href="#" class="btn-noir px-4 py-2"><span class="fs-6 play-bold">Contact</span></a>
+                            </div>
                         </div>
-                    </nav>
-                </div>
+
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero section -->
+
+        <!-- ===================== HERO ===================== -->
         <section class="hero d-flex align-items-center justify-content-center text-center">
             <img src="./assets/img/hero-section.jpg" alt="Échiquier de Bigorre" class="hero-bg">
             <div class="hero-overlay"></div>
-            <div class="hero-content d-flex flex-column align-items-center gap-3">
-                <h1 class="display-1 fw-bold text-custom-white play-bold">L'Échiquier de Bigorre</h1>
-                <p class="fs-2 fst-italic hero-subtitle">Depuis 100 ans</p>
-                <a href="#" class="btn-or px-5 py-3 fs-3 play-bold">Lorem Ipsum</a>
+            <div class="hero-content d-flex flex-column align-items-center gap-3 px-3">
+                <h1 class="display-3 display-md-1 fw-bold text-custom-white play-bold">L'Échiquier de Bigorre</h1>
+                <p class="fs-4 fs-md-2 fst-italic hero-subtitle">Depuis 100 ans</p>
+                <a href="#" class="btn-or px-4 py-2 px-md-5 py-md-3 fs-4 fs-md-3 play-bold">Lorem Ipsum</a>
             </div>
         </section>
 
         <!-- Séparateur hero-page -->
         <div class="w-100 bg-custom-primary separateur"></div>
 
-        <!-- Section présentation -->
+        <!-- ===================== SECTION HISTOIRE ===================== -->
         <section>
-            <div class="row g-0">
+
+            <!-- VERSION MOBILE -->
+            <div class="d-lg-none bg-custom-primary py-5">
+                <div class="d-flex flex-column align-items-center text-center px-4 gap-5">
+                    <h2 class="play-bold fs-2 text-custom-white">
+                        100 ans d'histoire
+                    </h2>
+                    <!-- CARD IMAGE + TEXTE -->
+                    <div class="histoire-card position-relative overflow-hidden">
+                        <img src="./assets/img/Alekhine+ph1.jpg" class="histoire-mobile-bg" alt="Histoire du club">
+                        <!-- Overlay sombre -->
+                        <div class="histoire-overlay"></div>
+                        <!-- Texte SUR l'image -->
+                        <div class="histoire-content">
+                            <p class="text-custom-white fs-5 mb-0">
+                                L'Échiquier de Bigorre est un club d'échecs créé en 1925 à Tarbes,
+                                il est le plus ancien club de son département.
+                                Initialement appelé "le cercle" par son fondateur Marc Lasserre.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-white px-5 py-2"><span class="fs-4 play-bold">En savoir plus</span></a>
+                </div>
+            </div>
+
+            <!-- VERSION DESKTOP : layout deux colonnes original -->
+            <div class="d-none d-lg-flex row g-0">
                 <div class="col-6 bg-custom-secondary d-flex justify-content-center p-5">
                     <div class="col-8 d-flex flex-column align-items-center gap-5 text-center">
                         <h2 class="play-bold fs-1">100 ans d'histoire</h2>
@@ -76,7 +117,7 @@
                     </div>
                 </div>
                 <div class="col-6 bg-custom-primary d-flex align-items-center justify-content-center py-5">
-                    <img src="./assets/img/Alekhine+ph1.jpg" class="w-50 img-fluid rounded-4">
+                    <img src="./assets/img/Alekhine+ph1.jpg" class="w-50 img-fluid rounded-4 border-custom-or">
                 </div>
             </div>
 
@@ -85,9 +126,8 @@
         <!-- Séparateur présentation-tournoi -->
         <div class="w-100 bg-custom-primary separateur"></div>
 
-        <!-- Section Tournois -->
-        <!-- Carrousel 1 - vers la gauche -->
-        <section class="bg-custom-primary py-5 overflow-hidden">
+        <!-- ===================== CARROUSEL 1 ===================== -->
+        <section class="bg-custom-secondary bg-lg-custom-primary py-4 py-md-5 overflow-hidden">
             <div class="carousel-track-wrapper">
                 <div class="carousel-track" id="track1">
                     <img src="./assets/img/28.png" class="rounded-3 carousel-img">
@@ -108,11 +148,11 @@
 
         <!-- Section dorée -->
         <section class="bg-custom-or d-flex justify-content-center align-items-center py-4">
-            <a href="#" class="btn-noir px-5 py-2 fs-4 play-bold"><span>Lorem Ipsum</span></a>
+            <a href="#" class="btn-noir px-4 py-2 fs-5 play-bold"><span>Lorem Ipsum</span></a>
         </section>
 
-        <!-- Carrousel 2 - vers la droite -->
-        <section class="bg-custom-secondary py-5 overflow-hidden">
+        <!-- ===================== CARROUSEL 2 ===================== -->
+        <section class="bg-custom-secondary py-4 py-md-5 overflow-hidden">
             <div class="carousel-track-wrapper">
                 <div class="carousel-track carousel-track-reverse" id="track2">
                     <img src="./assets/img/28.png" class="rounded-3 carousel-img">
@@ -131,90 +171,91 @@
             </div>
         </section>
 
-        <!-- Séparateur présentation-tournoi -->
+        <!-- Séparateur -->
         <div class="w-100 bg-custom-secondary separateur"></div>
 
+        <!-- ===================== SECTION ACTUS ===================== -->
         <section>
-            <div class="row g-0">
+            <div class="row g-0 flex-column flex-lg-row"> 
+                <!-- Carte principale -->
 
-                <!-- Colonne gauche -->
-                <div class="col-6 bg-custom-primary d-flex justify-content-center py-5">
-                    <div class="col-8 carte-principale rounded-4 p-4 d-flex flex-column justify-content-between">
-                        <h2 class="play-bold text-custom-white fs-1">Vainqueurs de l'Open</h2>
-                        <p class="text-custom-white fs-5">Cette année, c'est le Pallois Julien Lecocq qui a remporté le
-                            tournoi principal. Pour le tournoi Blavignac (moins de 1700 Elo), c'est John Gabaix qui nous
-                            a offert une belle performance.</p>
+                <div class="col-12 col-lg-6 bg-custom-primary d-flex justify-content-center pt-4 py-md-5 px-3 px-md-0">
+                    <div class="col-12 col-lg-9 carte-principale rounded-4 p-4 d-flex flex-column justify-content-between gap-3">
+                        <h2 class="play-bold text-custom-white fs-2 fs-md-1">Vainqueurs de l'Open</h2>
+                        <p class="text-custom-white fs-6 fs-md-5">Cette année, c'est le Pallois Julien Lecocq qui a
+                            remporté le tournoi principal. Pour le tournoi Blavignac (moins de 1700 Elo), c'est John
+                            Gabaix qui nous a offert une belle performance.</p>
                     </div>
                 </div>
 
-                <!-- Colonne droite -->
-                <div class="col-6 bg-custom-secondary d-flex flex-column gap-4 p-5">
-                    <a href="#"
-                        class="carte-lien rounded-4 p-4 d-flex align-items-center justify-content-between text-decoration-none">
-                        <div class="col-8">
-                            <h3 class="play-bold fs-4 mb-1">Instagram</h3>
+             <!-- Cartes liens -->
+
+                <div class="col-12 col-lg-6 bg-custom-primary bg-lg-custom-secondary d-flex flex-column gap-3 p-3 p-md-5"> 
+                    <a href="#" class="carte-lien rounded-4 p-3 p-md-4 d-flex align-items-center justify-content-between text-decoration-none">
+                        <div class="col-10 col-md-8">
+                            <h3 class="play-bold fs-5 mb-1">Instagram</h3>
                             <p class="mb-0 fs-6">Vous pourrez retrouver les actualités et les résultats du club dans les
                                 posts ou les storys. N'hésitez pas à partager l'information autour de vous !</p>
                         </div>
-                    </a>
-
-                    <a href="#"
-                        class="carte-lien rounded-4 p-4 d-flex align-items-center justify-content-between text-decoration-none">
-                        <div class="col-8">
-                            <h3 class="play-bold fs-4 mb-1">Jardin Massey</h3>
+                    </a> <a href="#"
+                        class="carte-lien rounded-4 p-3 p-md-4 d-flex align-items-center justify-content-between text-decoration-none">
+                        <div class="col-10 col-md-8">
+                            <h3 class="play-bold fs-5 mb-1">Jardin Massey</h3>
                             <p class="mb-0 fs-6">Retrouvez-nous au Jardin Massey dans la salle associative côté
                                 médiathèque "Louis Aragon" pour des cours d'échecs le mercredi et le samedi !</p>
                         </div>
-                    </a>
-
-                    <a href="#"
-                        class="carte-lien rounded-4 p-4 d-flex align-items-center justify-content-between text-decoration-none">
-                        <div class="col-8">
-                            <h3 class="play-bold fs-4 mb-1">Nouveau site !</h3>
+                    </a> <a href="#"
+                        class="carte-lien rounded-4 p-3 p-md-4 d-flex align-items-center justify-content-between text-decoration-none">
+                        <div class="col-10 col-md-8">
+                            <h3 class="play-bold fs-5 mb-1">Nouveau site !</h3>
                             <p class="mb-0 fs-6">Toutes les informations dont vous avez besoin sont disponibles ici. Et
                                 si vous avez des questions, n'hésitez pas à envoyer un message via le formulaire !</p>
                         </div>
                     </a>
-
-                    <div class="d-flex justify-content-center my-5">
-                        <a href="#" class="btn-noir px-5 py-2 fs-4 play-bold"><span>Lorem Ipsum</span></a>
-                    </div>
+                    <div class="d-none d-lg-flex justify-content-center my-3 my-md-5"> <a href="#"
+                            class="btn-noir px-4 py-2 fs-5 play-bold"><span>Lorem Ipsum</span></a> </div>
                 </div>
-
             </div>
         </section>
+
     </main>
 
-    <footer class="bg-custom-primary py-5">
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-custom-primary py-4 py-md-5">
         <div class="container">
-            <div class="d-flex flex-column align-items-center gap-4">
+            <div class="d-flex flex-column align-items-center gap-3 gap-md-4">
 
                 <div class="d-flex flex-column align-items-center gap-3">
                     <a href="#">
                         <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
                     </a>
-                    <div class="d-flex justify-content-center gap-footer">
-                        <a class="link-white fs-5" href="./index.html">Histoire</a>
-                        <a class="link-white fs-5" href="./tournois.html">Tournois</a>
-                        <a class="link-white fs-5" href="./inscriptions.html">Inscriptions</a>
-                        <a class="link-white fs-5" href="./actualites.html">Actualités</a>
-                        <a class="link-white fs-5" href="./contact.html">Contact</a>
+
+                    <!-- Liens footer : colonne sur mobile, ligne sur desktop -->
+                    <div
+                        class="d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-2 gap-md-4 text-center">
+                        <a class="link-white fs-6" href="./histoire.html">Histoire</a>
+                        <a class="link-white fs-6" href="./tournois.html">Tournois</a>
+                        <a class="link-white fs-6" href="./inscriptions.html">Inscriptions</a>
+                        <a class="link-white fs-6" href="./actualites.html">Actualités</a>
+                        <a class="link-white fs-6" href="./contact.html">Contact</a>
                     </div>
+
                     <a href="#">
                         <img src="./assets/img/facebook.png" alt="Logo Échiquier de Bigorre" class="logo-img">
                     </a>
                 </div>
 
-                <div class="d-flex gap-4">
-                    <a class="link-white" href="./MLegales.html">Mentions légales</a>
-                    <a class="link-white" href="./PConfidentialite.html">Politique de confidentialité</a>
+                <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center">
+                    <a class="link-white fs-6" href="./MLegales.html">Mentions légales</a>
+                    <a class="link-white fs-6" href="./PConfidentialite.html">Politique de confidentialité</a>
                 </div>
 
-                <p class="text-custom-white mb-0">© Échiquier de Bigorre 2026, tous droits réservés</p>
+                <p class="text-custom-white mb-0 fs-6 text-center">© Échiquier de Bigorre 2026, tous droits réservés</p>
 
             </div>
         </div>
     </footer>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
 <script>
