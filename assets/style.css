@@ -26,6 +26,13 @@
   font-style: normal;
 }
 
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .play-bold {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -337,6 +344,70 @@ header {
 .table-tournoi td:empty {
     text-align: center;
     vertical-align: middle;
+}
+
+
+/* Tarifs */
+.prix-tarif {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.adresse-carte {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Page Contact */
+.champ-contact {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--text-white);
+    color: var(--text-white);
+    outline: none;
+    padding: 4px 0;
+    width: 100%;
+    resize: none;
+}
+
+.champ-contact::placeholder {
+    color: var(--text-white);
+    /* opacity: 0.7; */
+    font-weight: 700;
+}
+
+.champ-contact:focus {
+    border-bottom: 1px solid var(--or-color);
+}
+
+.champ-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.champ-label {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.champ-contact:focus ~ .champ-label,
+.champ-contact:not(:placeholder-shown) ~ .champ-label {
+    top: -18px;
+    font-size: 0.75rem;
+    color: var(--or-color);
+    font-weight: 400;
 }
 
 
