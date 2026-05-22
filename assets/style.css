@@ -757,20 +757,27 @@ header {
     color: var(--text-white);
 }
 
+.btn-noir span {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+
 .btn-noir {
     background-color: var(--primary-color);
     color: var(--text-white);
     border-radius: 15px;
     text-decoration: none;
-    position: relative;
-    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s, color 0.2s;
+    gap: 0;
+    overflow: hidden;
+    transition: background 0.2s, color 0.2s, gap 0.3s;
 }
 
 .btn-noir span {
+    display: inline-block;
     transition: transform 0.3s ease;
 }
 
@@ -780,27 +787,21 @@ header {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 20px;
+    width: 0px;
     height: 20px;
-    position: absolute;
-    right: 1.5rem;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: translateX(-10px);
+    transition: opacity 0.3s ease, width 0.3s ease;
+    flex-shrink: 0;
 }
 
 .btn-noir:hover {
     background-color: var(--btn-noir-hover);
-    color: var(--text-white);
-}
-
-.btn-noir:hover span {
-    transform: translateX(-15px);
+    gap: 8px;
 }
 
 .btn-noir:hover::after {
     opacity: 1;
-    transform: translateX(0);
+    width: 20px;
 }
 
 .btn-white {
