@@ -17,161 +17,307 @@
 </head>
 
 <body class="inter bg-custom-secondary">
+    <!-- ===================== HEADER / NAVBAR ===================== -->
     <header>
-        <div class="container col-10">
-            <div class="row justify-content-center">
-                <div class="pt-4">
-                    <nav class="navbar navbar-expand-lg navbar-custom px-5 py-3 rounded-4">
-                        <div class="container-fluid px-0 d-flex align-items-center">
+        <div class="container-fluid col-10">
+            <div class="pt-3 pt-md-4">
+                <nav class="navbar navbar-expand-lg navbar-custom px-3 px-md-5 py-3 rounded-4">
+                    <div class="container-fluid px-0 d-flex align-items-center">
 
-                            <a class="navbar-brand p-0 me-0" href="./index.html">
-                                <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
-                            </a>
+                        <!-- Logo -->
+                        <a class="navbar-brand p-0 me-0" href="./index.html">
+                            <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
+                        </a>
 
-                            <ul class="navbar-nav mx-auto d-flex flex-row gap-5 mb-0">
-                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html">Histoire</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html">Tournois</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html">Tarifs</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html">Actualités</a>
-                                </li>
+                        <!-- Burger button (visible on mobile) -->
+                        <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon burger-color"></span>
+                        </button>
+
+                        <!-- Nav links + CTA (collapse on mobile) -->
+                        <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
+                            <ul
+                                class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
+                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html"><i
+                                            class="bi bi-book me-2 d-lg-none"></i>Histoire</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html"><i
+                                            class="bi bi-trophy me-2 d-lg-none"></i>Tournois</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html"><i
+                                            class="bi bi-tag me-2 d-lg-none"></i>Tarifs</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html"><i
+                                            class="bi bi-newspaper me-2 d-lg-none"></i>Actualités</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="./MLegales.html"></i>Mentions légales</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="./PConfidentialite.html"></i>Politique
+                                        de confidentialité</a></li>
                             </ul>
-
-                            <a href="./contact.html" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
-
+                            <div class="d-flex justify-content-center mb-2 mb-lg-0">
+                                <a href="#" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
+                            </div>
                         </div>
-                    </nav>
-                </div>
+
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Section Tarifs -->
+
+        <!-- ===================== SECTION TARIFS ===================== -->
         <section class="py-5">
+
             <div class="row justify-content-center">
-                <div class="col-9">
+
+                <div class="col-11 col-lg-9">
+
+                    <!-- TITRE -->
                     <div class="espace-sommaire mb-5">
+
                         <div class="mt-5">
+
                             <div class="row justify-content-center">
-                                <div class="col-12 d-flex  align-items-center gap-3">
-                                    <img src="./assets/img/h1.png" class="w-auto" style="height: 80px;">
-                                    <h1 class="play-bold mb-0 size-titre">Tarifs et horaires</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row gap-3 col-12">
 
-                        <!-- Tarifs -->
-                        <div class="col-8 bg-custom-primary p-5 d-flex flex-column gap-5">
-
-                            <!-- Tarifs Adultes -->
-                            <div>
-                                <h3 class="sous-titre text-custom-white fs-4 mb-3">Tarifs - Adultes</h3>
-                                <div class="d-flex flex-column gap-5">
-                                    <div class="d-flex align-items-stretch bg-custom-or mx-5">
-                                        <span
-                                            class="text-custom-black fs-6 px-3 py-0 col-10 d-flex align-items-center">Première
-                                            année joueur licencié</span>
-                                        <span
-                                            class="bg-custom-bois text-custom-white px-3 col-2 prix-tarif">Gratuit</span>
-                                    </div>
-                                    <div class="d-flex align-items-stretch bg-custom-or mx-5">
-                                        <span
-                                            class="text-custom-black fs-6 px-3 py-2 col-10 d-flex align-items-center">Adultes
-                                            - Licence A</span>
-                                        <span class="bg-custom-bois text-custom-white px-3 col-2 prix-tarif">79€</span>
-                                    </div>
-                                    <div class="d-flex align-items-stretch bg-custom-or mx-5">
-                                        <span
-                                            class="text-custom-black fs-6 px-3 py-2 col-10 d-flex align-items-center">Adultes
-                                            - Licence B</span>
-                                        <span class="bg-custom-bois text-custom-white px-3 col-2 prix-tarif">39€</span>
-                                    </div>
+                                <div class="col-12 d-flex align-items-center gap-3 text-center text-lg-start">
+                                    <img src="./assets/img/h1.png" class="img-fluid header-icon">
+                                    <h1 class="play-bold mb-0 size-titre">
+                                        Tarifs et horaires
+                                    </h1>
                                 </div>
+
                             </div>
 
-                            <!-- Tarifs École d'Échecs -->
-                            <div>
-                                <h3 class="sous-titre text-custom-white fs-4 mb-3">Tarifs - École d'Échecs</h3>
-                                <div class="d-flex flex-column gap-5">
-                                    <div class="d-flex align-items-stretch bg-custom-or mx-5">
-                                        <span
-                                            class="text-custom-black fs-6 px-3 py-2 col-10 d-flex align-items-center">Licence
-                                            Enfants + cours</span>
-                                        <span class="bg-custom-bois text-custom-white px-3 col-2 prix-tarif">160€</span>
-                                    </div>
-                                    <div class="d-flex align-items-stretch bg-custom-or mx-5">
-                                        <span
-                                            class="text-custom-black fs-6 px-3 py-2 col-10 d-flex align-items-center">Deuxième enfant d'une même famille</span>
-                                        <span class="bg-custom-bois text-custom-white px-3 col-2 prix-tarif">90€</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Horaires -->
-                        <div class="col-4 bg-custom-primary p-4 d-flex flex-column align-items-center">
-                            <h3 class="sous-titre text-custom-white fs-4 mb-4">Horaires</h3>
-                            <div class="d-flex flex-column gap-3 w-100 flex-grow-1">
-                                <div
-                                    class="bg-custom-or d-flex align-items-center justify-content-center flex-grow-1 mx-2">
-                                    <p class="mb-0 text-center fs-5">De 16h45 à 19h, le mercredi au club</p>
-                                </div>
-                                <div
-                                    class="bg-custom-or d-flex align-items-center justify-content-center flex-grow-1 mx-2">
-                                    <p class="mb-0 text-center fs-5">Mercredi, samedi et dimanche au jardin Massey. En extérieur quand il y a du beau temps.</p>
-                                </div>
-                            </div>
                         </div>
 
                     </div>
+
+                    <!-- BLOCS -->
+                    <div class="row g-4">
+
+                        <!-- TARIFS -->
+                        <div class="col-12 col-lg-8">
+
+                            <div class="bg-custom-primary p-3 py-4 p-lg-5 d-flex flex-column gap-5 h-100">
+
+                                <!-- Adultes -->
+                                <div>
+
+                                    <h3 class="sous-titre text-custom-white fs-4 mb-4">
+                                        Tarifs - Adultes
+                                    </h3>
+
+                                    <div class="d-flex flex-column gap-4">
+
+                                        <div class="d-flex flex-column flex-md-row align-items-stretch bg-custom-or">
+
+                                            <span
+                                                class="text-custom-black fs-6 px-3 py-3 col-12 col-md-10 d-flex align-items-center">
+                                                Première année joueur licencié
+                                            </span>
+
+                                            <span
+                                                class="bg-custom-bois text-custom-white px-3 py-1 col-12 col-md-2 prix-tarif text-center d-flex justify-content-center align-items-center">
+                                                Gratuit
+                                            </span>
+
+                                        </div>
+
+                                        <div class="d-flex flex-column flex-md-row align-items-stretch bg-custom-or">
+
+                                            <span
+                                                class="text-custom-black fs-6 px-3 py-3 col-12 col-md-10 d-flex align-items-center">
+                                                Adultes - Licence A
+                                            </span>
+
+                                            <span
+                                                class="bg-custom-bois text-custom-white px-3 py-1 col-12 col-md-2 prix-tarif text-center d-flex justify-content-center align-items-center">
+                                                79€
+                                            </span>
+
+                                        </div>
+
+                                        <div class="d-flex flex-column flex-md-row align-items-stretch bg-custom-or">
+
+                                            <span
+                                                class="text-custom-black fs-6 px-3 py-3 col-12 col-md-10 d-flex align-items-center">
+                                                Adultes - Licence B
+                                            </span>
+
+                                            <span
+                                                class="bg-custom-bois text-custom-white px-3 py-1 col-12 col-md-2 prix-tarif text-center d-flex justify-content-center align-items-center">
+                                                39€
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- École -->
+                                <div>
+
+                                    <h3 class="sous-titre text-custom-white fs-4 mb-4">
+                                        Tarifs - École d'Échecs
+                                    </h3>
+
+                                    <div class="d-flex flex-column gap-4">
+
+                                        <div class="d-flex flex-column flex-md-row align-items-stretch bg-custom-or">
+
+                                            <span
+                                                class="text-custom-black fs-6 px-3 py-3 col-12 col-md-10 d-flex align-items-center">
+                                                Licence Enfants + cours
+                                            </span>
+
+                                            <span
+                                                class="bg-custom-bois text-custom-white px-3 py-1 col-12 col-md-2 prix-tarif text-center d-flex justify-content-center align-items-center">
+                                                160€
+                                            </span>
+
+                                        </div>
+
+                                        <div class="d-flex flex-column flex-md-row align-items-stretch bg-custom-or">
+
+                                            <span
+                                                class="text-custom-black fs-6 px-3 py-3 col-12 col-md-10 d-flex align-items-center">
+                                                Deuxième enfant d'une même famille
+                                            </span>
+
+                                            <span
+                                                class="bg-custom-bois text-custom-white px-3 py-1 col-12 col-md-2 prix-tarif text-center d-flex justify-content-center align-items-center">
+                                                90€
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- HORAIRES -->
+                        <div class="col-12 col-lg-4">
+
+                            <div class="bg-custom-primary p-3 p-lg-4 d-flex flex-column align-items-center h-100">
+
+                                <h3 class="sous-titre text-custom-white fs-4 mb-4">
+                                    Horaires
+                                </h3>
+
+                                <div class="d-flex flex-column gap-3 w-100 flex-grow-1">
+
+                                    <div
+                                        class="bg-custom-or d-flex align-items-center justify-content-center flex-grow-1 p-3">
+
+                                        <p class="mb-0 text-center fs-6 fs-lg-5">
+                                            De 16h45 à 19h, le mercredi au club
+                                        </p>
+
+                                    </div>
+
+                                    <div
+                                        class="bg-custom-or d-flex align-items-center justify-content-center flex-grow-1 p-3">
+
+                                        <p class="mb-0 text-center fs-6 fs-lg-5">
+                                            Mercredi, samedi et dimanche au jardin Massey.
+                                            En extérieur quand il y a du beau temps.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
 
+        <!-- Séparateur -->
         <div class="d-flex justify-content-center mb-3">
-            <img src="./assets/img/separation.webp" alt="separation" class="w-15 py-3">
+
+            <img src="./assets/img/separation.webp" alt="separation" class="w-50 w-lg-15 py-3">
+
         </div>
 
-        <!-- Section Localisation -->
+        <!-- ===================== LOCALISATION ===================== -->
         <section class="pb-5 my-5">
+
             <div class="row justify-content-center">
-                <div class="col-9">
+
+                <div class="col-11 col-lg-9">
+
                     <div class="row g-4 align-items-stretch">
 
                         <!-- Carte 1 -->
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6">
+
                             <div class="d-flex flex-column h-100 overflow-hidden">
+
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.123456789!2d0.0781!3d43.2327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEzJzU3LjciTiAwwrAwNCczMS4yIkU!5e0!3m2!1sfr!2sfr!4v1234567890"
-                                    width="100%" height="400" style="border:0;" allowfullscreen=""
-                                    loading="lazy"></iframe>
-                                <div class="bg-custom-or py-4 px-2 text-center flex-grow-1 adresse-carte">
-                                    <p class="mb-0 fs-5 inter-bold">47 rue Brauhauban, 65000 Tarbes</p>
+                                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+
+                                </iframe>
+
+                                <div class="bg-custom-or py-4 px-3 text-center flex-grow-1 adresse-carte">
+
+                                    <p class="mb-0 fs-6 fs-lg-5 inter-bold">
+                                        47 rue Brauhauban, 65000 Tarbes
+                                    </p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <!-- Carte 2 -->
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6">
+
                             <div class="d-flex flex-column h-100 overflow-hidden">
+
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.123456789!2d0.0781!3d43.2327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEzJzU3LjciTiAwwrAwNCczMS4yIkU!5e0!3m2!1sfr!2sfr!4v1234567890"
-                                    width="100%" height="400" style="border:0;" allowfullscreen=""
-                                    loading="lazy"></iframe>
-                                <div class="bg-custom-or py-4 px-2 text-center mt-auto adresse-carte">
-                                    <p class="mb-0 fs-5 inter-bold">Parc Massey, 65000 Tarbes<br>Côté médiathèque au sein du Jardin
-                                        Massey</p>
+                                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+
+                                </iframe>
+
+                                <div class="bg-custom-or py-4 px-3 text-center flex-grow-1 adresse-carte">
+
+                                    <p class="mb-0 fs-6 fs-lg-5 inter-bold">
+                                        Jardin Massey, 65000 Tarbes
+                                        <br>
+                                        Côté médiathèque au sein du Jardin Massey
+                                    </p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
 
     <footer class="bg-custom-primary py-5">
@@ -204,6 +350,36 @@
             </div>
         </div>
     </footer>
+
+    <nav class="bottom-nav">
+        <a href="./histoire.html" class="bottom-nav-item">
+            <i class="bi bi-book"></i>
+            <span>Histoire</span>
+        </a>
+        <a href="./tournois.html" class="bottom-nav-item">
+            <i class="bi bi-trophy"></i>
+            <span>Tournois</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="bi bi-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <a href="./tarifs.html" class="bottom-nav-item">
+            <i class="bi bi-tag"></i>
+            <span>Tarifs</span>
+        </a>
+        <a href="./actualites.html" class="bottom-nav-item">
+            <i class="bi bi-newspaper"></i>
+            <span>Actualités</span>
+        </a>
+    </nav>
+    <script>
+        document.querySelectorAll('.bottom-nav-item').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
 

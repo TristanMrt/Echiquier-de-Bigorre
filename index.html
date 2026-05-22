@@ -20,7 +20,7 @@
 
     <!-- ===================== HEADER / NAVBAR ===================== -->
     <header>
-        <div class="container-fluid px-3 px-md-4">
+        <div class="container-fluid col-10">
             <div class="pt-3 pt-md-4">
                 <nav class="navbar navbar-expand-lg navbar-custom px-3 px-md-5 py-3 rounded-4">
                     <div class="container-fluid px-0 d-flex align-items-center">
@@ -34,21 +34,29 @@
                         <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
                             aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon burger-color"></span>
                         </button>
 
                         <!-- Nav links + CTA (collapse on mobile) -->
                         <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
                             <ul
                                 class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
-                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html">Histoire</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html">Tournois</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html">Tarifs</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html">Actualités</a>
-                                </li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html"><i
+                                            class="bi bi-book me-2 d-lg-none"></i>Histoire</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html"><i
+                                            class="bi bi-trophy me-2 d-lg-none"></i>Tournois</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html"><i
+                                            class="bi bi-tag me-2 d-lg-none"></i>Tarifs</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html"><i
+                                            class="bi bi-newspaper me-2 d-lg-none"></i>Actualités</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="./MLegales.html"></i>Mentions légales</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="./PConfidentialite.html"></i>Politique
+                                        de confidentialité</a></li>
                             </ul>
                             <div class="d-flex justify-content-center mb-2 mb-lg-0">
-                                <a href="#" class="btn-noir px-4 py-2"><span class="fs-6 play-bold">Contact</span></a>
+                                <a href="#" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
                             </div>
                         </div>
 
@@ -67,7 +75,7 @@
             <div class="hero-content d-flex flex-column align-items-center gap-3 px-3">
                 <h1 class="display-3 display-md-1 fw-bold text-custom-white play-bold">L'Échiquier de Bigorre</h1>
                 <p class="fs-4 fs-md-2 fst-italic hero-subtitle">Depuis 100 ans</p>
-                <a href="#" class="btn-or px-4 py-2 px-md-5 py-md-3 fs-4 fs-md-3 play-bold">Lorem Ipsum</a>
+                <a href="#" class="btn-or px-4 py-2 px-md-5 py-md-3 fs-4 fs-md-3 play-bold">Contact</a>
             </div>
         </section>
 
@@ -106,7 +114,7 @@
                 <div class="col-6 bg-custom-secondary d-flex justify-content-center p-5">
                     <div class="col-8 d-flex flex-column align-items-center gap-5 text-center">
                         <h2 class="play-bold fs-1">100 ans d'histoire</h2>
-                        <p class="text-custom-black fs-3">L'Échiquier de Bigorre est un club d'échecs
+                        <p class="text-custom-black fs-5">L'Échiquier de Bigorre est un club d'échecs
                             créé en 1925 à Tarbes,
                             il est le plus ancien club de son département. Initialement appelé "le cercle" par son
                             fondateur Marc Lasserre,
@@ -116,7 +124,7 @@
                         <a href="#" class="btn-noir px-5 py-2"><span class="fs-4 play-bold">En savoir plus</span></a>
                     </div>
                 </div>
-                <div class="col-6 bg-custom-primary d-flex align-items-center justify-content-center py-5">
+                <div class="col-6 bg-custom-primary d-flex align-items-center justify-content-center py-1">
                     <img src="./assets/img/Alekhine+ph1.jpg" class="w-50 img-fluid rounded-4 border-custom-or">
                 </div>
             </div>
@@ -148,7 +156,7 @@
 
         <!-- Section dorée -->
         <section class="bg-custom-or d-flex justify-content-center align-items-center py-4">
-            <a href="#" class="btn-noir px-4 py-2 fs-5 play-bold"><span>Lorem Ipsum</span></a>
+            <a href="#" class="btn-noir px-4 py-2 fs-5 play-bold"><span>Tournois</span></a>
         </section>
 
         <!-- ===================== CARROUSEL 2 ===================== -->
@@ -176,11 +184,12 @@
 
         <!-- ===================== SECTION ACTUS ===================== -->
         <section>
-            <div class="row g-0 flex-column flex-lg-row"> 
+            <div class="row g-0 flex-column flex-lg-row">
                 <!-- Carte principale -->
 
                 <div class="col-12 col-lg-6 bg-custom-primary d-flex justify-content-center pt-4 py-md-5 px-3 px-md-0">
-                    <div class="col-12 col-lg-9 carte-principale rounded-4 p-4 d-flex flex-column justify-content-between gap-3">
+                    <div
+                        class="col-12 col-lg-9 carte-principale rounded-4 p-4 d-flex flex-column justify-content-between gap-3">
                         <h2 class="play-bold text-custom-white fs-2 fs-md-1">Vainqueurs de l'Open</h2>
                         <p class="text-custom-white fs-6 fs-md-5">Cette année, c'est le Pallois Julien Lecocq qui a
                             remporté le tournoi principal. Pour le tournoi Blavignac (moins de 1700 Elo), c'est John
@@ -188,10 +197,12 @@
                     </div>
                 </div>
 
-             <!-- Cartes liens -->
+                <!-- Cartes liens -->
 
-                <div class="col-12 col-lg-6 bg-custom-primary bg-lg-custom-secondary d-flex flex-column gap-3 p-3 p-md-5"> 
-                    <a href="#" class="carte-lien rounded-4 p-3 p-md-4 d-flex align-items-center justify-content-between text-decoration-none">
+                <div
+                    class="col-12 col-lg-6 bg-custom-primary bg-lg-custom-secondary d-flex flex-column gap-3 p-3 p-md-5">
+                    <a href="#"
+                        class="carte-lien rounded-4 p-3 p-md-4 d-flex align-items-center justify-content-between text-decoration-none">
                         <div class="col-10 col-md-8">
                             <h3 class="play-bold fs-5 mb-1">Instagram</h3>
                             <p class="mb-0 fs-6">Vous pourrez retrouver les actualités et les résultats du club dans les
@@ -213,7 +224,7 @@
                         </div>
                     </a>
                     <div class="d-none d-lg-flex justify-content-center my-3 my-md-5"> <a href="#"
-                            class="btn-noir px-4 py-2 fs-5 play-bold"><span>Lorem Ipsum</span></a> </div>
+                            class="btn-noir px-4 py-2 fs-5 play-bold"><span>Actualités</span></a> </div>
                 </div>
             </div>
         </section>
@@ -256,9 +267,49 @@
         </div>
     </footer>
 
+    <nav class="bottom-nav">
+        <a href="./histoire.html" class="bottom-nav-item">
+            <i class="bi bi-book"></i>
+            <span>Histoire</span>
+        </a>
+        <a href="./tournois.html" class="bottom-nav-item">
+            <i class="bi bi-trophy"></i>
+            <span>Tournois</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="bi bi-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <a href="./tarifs.html" class="bottom-nav-item">
+            <i class="bi bi-tag"></i>
+            <span>Tarifs</span>
+        </a>
+        <a href="./actualites.html" class="bottom-nav-item">
+            <i class="bi bi-newspaper"></i>
+            <span>Actualités</span>
+        </a>
+    </nav>
+    <script>
+        document.querySelectorAll('.bottom-nav-item').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    const navbarMenu = document.getElementById('navbarMenu');
+    const navbar = document.querySelector('.navbar-custom');
+
+    navbarMenu.addEventListener('show.bs.collapse', () => {
+        navbar.classList.add('menu-ouvert');
+    });
+    navbarMenu.addEventListener('hide.bs.collapse', () => {
+        navbar.classList.remove('menu-ouvert');
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
         ['carousel1', 'carousel2'].forEach(id => {
             new bootstrap.Carousel(document.getElementById(id), {
