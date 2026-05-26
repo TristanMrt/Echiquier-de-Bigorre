@@ -18,30 +18,49 @@
 
 <body class="inter bg-custom-secondary">
     <header>
-        <div class="container col-10">
-            <div class="row justify-content-center">
-                <div class="pt-4">
-                    <nav class="navbar navbar-expand-lg navbar-custom px-5 py-3 rounded-4">
-                        <div class="container-fluid px-0 d-flex align-items-center">
+        <div class="container-fluid col-10">
+            <div class="pt-3 pt-md-4">
+                <nav class="navbar navbar-expand-lg navbar-custom px-3 px-md-5 py-3 rounded-4">
+                    <div class="container-fluid px-0 d-flex align-items-center">
 
-                            <a class="navbar-brand p-0 me-0" href="./index.html">
-                                <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
-                            </a>
+                        <!-- Logo -->
+                        <a class="navbar-brand p-0 me-0" href="./index.html">
+                            <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
+                        </a>
 
-                            <ul class="navbar-nav mx-auto d-flex flex-row gap-5 mb-0">
-                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html">Histoire</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html">Tournois</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html">Tarifs</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html">Actualités</a>
-                                </li>
+                        <!-- Burger button (visible on mobile) -->
+                        <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon burger-color"></span>
+                        </button>
+
+                        <!-- Nav links + CTA (collapse on mobile) -->
+                        <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
+                            <ul
+                                class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
+                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html"><i
+                                            class="bi bi-book me-2 d-lg-none"></i>Histoire</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html"><i
+                                            class="bi bi-trophy me-2 d-lg-none"></i>Tournois</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html"><i
+                                            class="bi bi-tag me-2 d-lg-none"></i>Tarifs</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html"><i
+                                            class="bi bi-newspaper me-2 d-lg-none"></i>Actualités</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="./MLegales.html"></i>Mentions légales</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="./PConfidentialite.html"></i>Politique
+                                        de confidentialité</a></li>
                             </ul>
-
-                            <a href="./contact.html" class="btn-noir px-5 py-2"><span
-                                    class="fs-6 play-bold">Contact</span></a>
-
+                            <div class="d-flex justify-content-center mb-2 mb-lg-0">
+                                <a href="./contact.html" class="btn-noir px-5 py-2"><span
+                                        class="fs-6 play-bold">Contact</span></a>
+                            </div>
                         </div>
-                    </nav>
-                </div>
+
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
@@ -51,18 +70,17 @@
         <div class="espace-sommaire">
             <div class="mt-5 pt-5">
                 <div class="row justify-content-center">
-                    <div class="col-10 d-flex justify-content-center align-items-center gap-3">
-                        <img src="./assets/img/h1.png" class="w-auto" style="height: 80px;">
+                    <div class="col-10 col-lg-10 d-flex justify-content-center align-items-center gap-3">
+                        <img src="./assets/img/h1.png" class="header-icon">
                         <h1 class="play-bold mb-0 size-titre">L'Échiquier de Bigorre et ses 100 ans d'histoire</h1>
                     </div>
                 </div>
             </div>
 
-            <section class="sommaire pe-5 my-5">
+            <!-- Sommaire : masqué en mobile -->
+            <section class="sommaire pe-5 my-5 d-none d-lg-block">
                 <div class="container">
                     <div class="d-flex flex-row justify-content-center">
-
-                        <!-- Colonne gauche -->
                         <div class="col-4 d-flex flex-column gap-5">
                             <div class="d-flex flex-column align-items-center gap-5">
                                 <h2 class="sous-titre fst-italic fs-4">I - Les débuts du club (1930-1950)</h2>
@@ -73,8 +91,6 @@
                                 <img src="./assets/img/separation.webp" alt="separation" class="w-50 py-3">
                             </div>
                         </div>
-
-                        <!-- Colonne droite -->
                         <div class="col-4 d-flex flex-column gap-5">
                             <div class="d-flex flex-column align-items-center gap-5">
                                 <img src="./assets/img/separation.webp" alt="separation" class="w-50 py-3">
@@ -85,7 +101,6 @@
                                 <h2 class="sous-titre fst-italic fs-4">IV - Situation actuelle</h2>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -98,25 +113,24 @@
 
         <section class="py-5">
             <div class="row justify-content-center">
-                <div class="col-10">
+                <div class="col-11 col-lg-10">
 
                     <h2 class="sous-titre fst-italic fs-3 mb-5">I - Les débuts de club (1930-1950)</h2>
 
-                    <div class="px-5 mt-5">
+                    <div class="px-2 px-lg-5 mt-5">
                         <p>Le "cercle" a été créé en 1925 à l'initiative de Marc Lasserre.</p>
                         <p>Dès 1926, il organise son premier tournoi ainsi que des rencontres par équipes contre Pau et
                             Toulouse, puis des tournois triangulaires Tarbes-Pau-Bayonne et Tarbes-Lourdes-Toulouse.
-                            Dans ce
-                            cadre est également organisé le tournoi des 3B (Basque, Béarn et Bigorre).</p>
+                            Dans ce cadre est également organisé le tournoi des 3B (Basque, Béarn et Bigorre).</p>
                         <p>En 1932, le comité directeur a l'honneur d'accueillir Alexander Alekhine (voir encadré
                             ci-dessous), champion du monde d'échecs, pour une simultanée restée dans les mémoires. Il
                             dispute 20 parties (dont 2 à l'aveugle) et les remporte toutes en 30 minutes de sprint, sans
                             interruption, devant un public nombreux.</p>
                         <p class="mb-5">En 1933, Tarbes remporte la 3e édition de la Coupe des 3B devant Biarritz, Pau
-                            et Lourdes. À
-                            l'issue du tournoi, les clubs des 3B, sur les directives de la FFE fondent la Ligue
-                            régionale
-                            "Ligue d'Échecs de l'Adour". La coupe des 3B devient alors la coupe de l'Adour.<br>
+                            et Lourdes. À l'issue du tournoi, les clubs des 3B, sur les directives de la FFE fondent la
+                            Ligue
+                            régionale "Ligue d'Échecs de l'Adour". La coupe des 3B devient alors la coupe de
+                            l'Adour.<br>
                             Cette époque fut marquée par de nombreuses simultanées face à des Maîtres Internationaux et
                             Grands Maîtres, entrecoupées de banquets pour célébrer les victoires ou consoler les
                             défaites.
@@ -132,18 +146,18 @@
                             </div>
                         </div>
 
-                        <!-- Images -->
+                        <!-- Images section I -->
                         <div class="row g-4 mt-3">
-                            <div class="col-6">
+                            <div class="col-12 col-lg-6">
                                 <img src="./assets/img/club1934.jpg" alt="Le club en 1934"
-                                    class="img-fluid w-100 object-fit-cover" style="height: 400px;">
+                                    class="img-fluid w-100 object-fit-cover" style="height: 250px;">
                                 <p class="légende text-custom-black mt-2 fs-6">Le club en 1934, vainqueur pour la
                                     deuxième de la coupe des 3B. On peut y voir M.Blavignac, debout, troisième à partir
                                     de la gauche.</p>
                             </div>
-                            <div class="col-6">
-                                <img src="./assets/img/Alekhine+ph1.jpg" alt="Photo d'Alekhine" class="img-fluid"
-                                    style="height: 400px;">
+                            <div class="col-12 col-lg-6">
+                                <img src="./assets/img/Alekhine+ph1.jpg" alt="Photo d'Alekhine"
+                                    class="img-fluid w-100 object-fit-cover" style="height: 250px;">
                                 <p class="légende text-custom-black mt-2 fs-6">Photo d'Alekhine, champion du monde à
                                     cette époque.</p>
                             </div>
@@ -152,8 +166,7 @@
                         <div class="my-5">
                             <p>1942 - Le championnat est mis en pause pendant la Seconde Guerre mondiale, le club prend
                                 alors le nom de "L'Échiquier de Bigorre" (20 janvier 1942) sous la houlette du Président
-                                M.
-                                de Lonjon, C'est l'acte de naissance officiel de notre cercle !</p>
+                                M. de Lonjon, C'est l'acte de naissance officiel de notre cercle !</p>
                             <p>En 1949, les Échecs tarbais se divisent en quatre sections : Morane, le Lycée, les
                                 cigognes
                                 et l'Échiquier de Bigorre (seul survivant à ce jour).</p>
@@ -172,74 +185,67 @@
 
                     <!-- Séparateur -->
                     <div class="d-flex justify-content-center align-items-center">
-                        <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-5">
+                        <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-3 py-lg-5">
                     </div>
 
                     <!-- Section II -->
-                    <div class="row col-12 g-4 mt-3">
+                    <h2 class="sous-titre fst-italic fs-3 mb-4">II - Rencontres Tarbes / Huesca</h2>
 
-                        <!-- Titre + texte -->
-                        <div class="col-6 d-flex flex-column ">
+                    <div class="row g-4 mt-3">
+                        <!-- Mobile : titre en haut, puis images, puis texte -->
+                        <div class="col-12 col-lg-6">
                             <img src="./assets/img/huesca2011.jpg" alt="Rencontre contre Huesca à Tarbes en 2011"
-                                class="img-fluid w-100 object-fit-cover" style="height: 400px;">
+                                class="img-fluid w-100 object-fit-cover" style="height: 280px;">
                             <p class="fst-italic text-custom-black fs-6 mt-2">Rencontre contre Huesca à Tarbes en 2011
                             </p>
                         </div>
-                        <div class="col-6 d-flex flex-column justify-content-center text-end">
-                            <h2 class="sous-titre fst-italic fs-3 mb-3">II - Rencontres Tarbes / Huesca</h2>
-                            <p class="offset-4 col-8">La ville de Tarbes est jumelée à la ville espagnole de Huesca. Ce
-                                qui amène à des
+                        <div class="col-12 col-lg-6 d-flex flex-column justify-content-center text-lg-end">
+                            <p>La ville de Tarbes est jumelée à la ville espagnole de Huesca. Ce qui amène à des
                                 rencontres échiquéennes presque chaque année qui se déroulent alternativement dans les
-                                deux villes. La dernière rencontre a eu lieu en 2019. (info à vérifier).</p>
+                                deux villes. La dernière rencontre a eu lieu en 2019.</p>
                         </div>
 
-                        <!-- Texte gauche + image droite -->
-                        <div class="col-6 d-flex flex-column justify-content-center">
-                            <p class="col-8">Le jumelage Tarbes-Huesca, sur le plan échiquéen, existe depuis 1975. En
-                                septembre de
+                        <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+                            <p>Le jumelage Tarbes-Huesca, sur le plan échiquéen, existe depuis 1975. En septembre de
                                 cette année-là, à l'invitation du Président de Tarbes Monsieur Rigel, une imposante
                                 délégation de 15 espagnols, conduits par leur président Monsieur Bellenguer, était reçue
                                 à la salle des fêtes de la Mairie de Tarbes.</p>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6">
                             <img src="./assets/img/huesca2013.jpg" alt="Rencontre contre Huesca à Huesca en 2013"
-                                class="img-fluid w-100 object-fit-cover" style="height: 400px;">
+                                class="img-fluid w-100 object-fit-cover" style="height: 280px;">
                             <p class="fst-italic text-custom-black mt-2 fs-6">Rencontre contre Huesca à Huesca en 2013
                             </p>
                         </div>
 
-                        <!-- Encadré EN SAVOIR PLUS -->
-                        <div class="col-6"></div>
-                        <div class="col-6">
-                            <p class="text-custom-or mb-2 text-end">EN SAVOIR PLUS sur les rencontres Tarbes -
-                                Huesca</p>
-                            <div class="encadre d-inline-block float-end">
+                        <div class="col-12">
+                            <p class="text-custom-or mb-2">EN SAVOIR PLUS sur les rencontres Tarbes - Huesca</p>
+                            <div class="encadre d-inline-block">
                                 <a href="./assets/pdf/Huesca_1975.pdf" target="_blank"
                                     class="d-block text-custom-or">Tarbes-Huesca 1975-2009</a>
                                 <a href="./assets/pdf/Huesca_2010.pdf" target="_blank"
                                     class="d-block text-custom-or">Tarbes-Huesca 2010-2015</a>
                             </div>
                         </div>
-
                     </div>
 
                     <!-- Séparateur -->
                     <div class="d-flex justify-content-center align-items-center">
-                        <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-5">
+                        <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-3 py-lg-5">
                     </div>
 
                     <!-- Section III -->
                     <h2 class="sous-titre fst-italic fs-3 mb-5">III - La Coupe Loubatière</h2>
 
-                    <p class="text-center col-8 mx-auto mb-5 ">La Coupe Loubatière est la plus populaire des
-                        compétitions par
-                        équipes destinées aux joueurs amateurs. Créée en 1991 et organisée par la FFE, elle réunit
-                        chaque année plus de 400 équipes de 4 joueurs venant de toute la France. L'Échiquier de Bigorre
+                    <p class="text-center col-12 col-lg-8 mx-auto mb-5">La Coupe Loubatière est la plus populaire des
+                        compétitions par équipes destinées aux joueurs amateurs. Créée en 1991 et organisée par la FFE,
+                        elle
+                        réunit chaque année plus de 400 équipes de 4 joueurs venant de toute la France. L'Échiquier de
+                        Bigorre
                         participe régulièrement à cette très populaire compétition.</p>
 
-                    <!-- Image centrée -->
                     <div class="row justify-content-center my-4">
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6">
                             <img src="./assets/img/Loubatière.jpg" alt="Composition de l'équipe"
                                 class="img-fluid w-100 object-fit-cover">
                             <p class="fst-italic text-custom-black mt-2 fs-6 text-center">Composition de l'équipe :
@@ -248,18 +254,17 @@
                     </div>
 
                     <div class="my-5">
-                        <p class="text-center col-8 mx-auto">A deux reprises, le club s'était distingué en 2003 et en
-                            2005,
-                            terminant en finale ou demi-finale avec les capitaines Jérôme Langlois et Georges
-                            Baumgartner.
-                        </p>
-                        <p class="text-center col-8 mx-auto">En 2008, l'équipe de l'Échiquier de Bigorre, emmenée par
-                            son
-                            capitaine Patrick Moulié et son organisateur François Labarthe, réussit à passer toutes les
-                            épreuves et à gagner la finale.</p>
+                        <p class="text-center col-12 col-lg-8 mx-auto">A deux reprises, le club s'était distingué en
+                            2003
+                            et en 2005, terminant en finale ou demi-finale avec les capitaines Jérôme Langlois et
+                            Georges
+                            Baumgartner.</p>
+                        <p class="text-center col-12 col-lg-8 mx-auto">En 2008, l'équipe de l'Échiquier de Bigorre,
+                            emmenée par son capitaine Patrick Moulié et son organisateur François Labarthe, réussit à
+                            passer
+                            toutes les épreuves et à gagner la finale.</p>
                     </div>
 
-                    <!-- Encadré EN SAVOIR PLUS -->
                     <div class="my-4 text-center">
                         <p class="text-custom-or mb-2">EN SAVOIR PLUS sur la Coupe Loubatière</p>
                         <div class="encadre d-inline-block text-center">
@@ -272,22 +277,23 @@
 
                     <!-- Séparateur -->
                     <div class="d-flex justify-content-center align-items-center">
-                        <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-5">
+                        <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-3 py-lg-5">
                     </div>
 
                     <!-- Section IV -->
-                    <h2 class="sous-titre fst-italic fs-3 mb-5 text-end">IV - Situation actuelle</h2>
+                    <h2 class="sous-titre fst-italic fs-3 mb-5 text-lg-end">IV - Situation actuelle</h2>
 
-                    <p class="text-center col-8 mx-auto">Depuis 2024, le club évolue en Nationale 3. Il organise
-                        également chaque année deux tournois :
-                        l'Open International de Tarbes depuis 1993, ouvert à tous (plus d'informations sur la page
-                        Tournois), et le tournoi interne Marc Lasserre, un clin d'œil au fondateur du club.</p>
+                    <p class="text-center col-12 col-lg-8 mx-auto">Depuis 2024, le club évolue en Nationale 3. Il
+                        organise
+                        également chaque année deux tournois : l'Open International de Tarbes depuis 1993, ouvert à tous
+                        (plus d'informations sur la page Tournois), et le tournoi interne Marc Lasserre, un clin d'œil
+                        au
+                        fondateur du club.</p>
 
-                    <p class="text-center">Informations du club : <a
-                            href="https://www.echecs.asso.fr/FicheClub.aspx?Ref=1278"
-                            class="text-custom-or">https://www.echecs.asso.fr/FicheClub.aspx?Ref=1278</a></p>
+                    <p class="text-center">Informations du club :
+                        href="https://www.echecs.asso.fr/FicheClub.aspx?Ref=1278"
+                        class="text-custom-or">https://www.echecs.asso.fr/FicheClub.aspx?Ref=1278</a></p>
 
-                    <!-- À suivre -->
                     <div class="text-center my-5">
                         <h2 class="play-bold fs-2 my-5 py-5">À suivre...</h2>
                     </div>
@@ -336,8 +342,38 @@
         </div>
     </footer>
 
+    <nav class="bottom-nav">
+        <a href="./histoire.html" class="bottom-nav-item">
+            <i class="bi bi-book"></i>
+            <span>Histoire</span>
+        </a>
+        <a href="./tournois.html" class="bottom-nav-item">
+            <i class="bi bi-trophy"></i>
+            <span>Tournois</span>
+        </a>
+        <a href="./contact.html" class="bottom-nav-item">
+            <i class="bi bi-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <a href="./tarifs.html" class="bottom-nav-item">
+            <i class="bi bi-tag"></i>
+            <span>Tarifs</span>
+        </a>
+        <a href="./actualites.html" class="bottom-nav-item">
+            <i class="bi bi-newspaper"></i>
+            <span>Actualités</span>
+        </a>
+    </nav>
+    <script>
+        document.querySelectorAll('.bottom-nav-item').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="./JS/script.js"></script>
 </html>
