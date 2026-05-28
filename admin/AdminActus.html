@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/bright.css" id="theme-style">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <title>Admin - Actualités</title>
+</head>
+
+<body class="inter bg-custom-secondary">
+
+    <!-- HEADER -->
+    <header>
+        <div class="container-fluid col-10">
+            <div class="pt-3 pt-md-4">
+                <nav class="navbar navbar-expand-lg navbar-custom px-3 px-md-5 py-3 rounded-4">
+                    <div class="container-fluid px-0 d-flex align-items-center">
+                        <a class="navbar-brand p-0 me-0" href="../index.html">
+                            <img src="../assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
+                        </a>
+                        <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
+                            <ul class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
+                                <li class="nav-item"><a class="nav-link fs-5" href="../histoire.html">Histoire</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../tournois.html">Tournois</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../tarifs.html">Tarifs</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../actualites.html">Actualités</a></li>
+                            </ul>
+                            <div class="d-flex justify-content-center mb-2 mb-lg-0">
+                                <a href="../contact.html" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Titre -->
+        <div class="espace-sommaire">
+            <div class="mt-5 pt-5">
+                <div class="row justify-content-center">
+                    <div class="col-10 d-flex justify-content-center align-items-center gap-3">
+                        <h1 class="play-bold mb-0 size-titre">Actualités</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav admin -->
+        <div class="d-flex justify-content-center align-items-center mb-4">
+            <ul class="navbar-nav admin-nav text-center d-flex flex-row gap-5">
+                <li class="nav-item"><a class="nav-link fs-5" href="./AdminHistoire.html">Histoire</a></li>
+                <li class="nav-item"><a class="nav-link fs-5" href="./AdminTournois.html">Tournois</a></li>
+                <li class="nav-item"><a class="nav-link fs-5" href="./AdminTarifs.html">Tarifs</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 admin-nav-active" href="./AdminActus.html">Actualités</a></li>
+            </ul>
+        </div>
+
+        <!-- Zone d'édition -->
+        <div class="d-flex align-items-center justify-content-center mb-5">
+            <div class="bg-custom-primary py-4 px-4 col-10 col-lg-8 d-flex flex-column gap-4">
+
+                <!-- Blog -->
+                <h2 class="play-bold text-custom-white fs-4">Blog</h2>
+                <button class="btn-add" onclick="ajouterActu()">+</button>
+                <div id="actusContainer" class="d-flex flex-column gap-3"></div>
+
+                <div class="d-flex justify-content-end mt-2">
+                    <button class="btn-or px-5 py-2 fs-6 play-bold" onclick="sauvegarderActus()">
+                        <span>Sauvegarder</span>
+                    </button>
+                </div>
+
+                <!-- Résultats -->
+                <h2 class="play-bold text-custom-white fs-4 mt-4">Derniers résultats</h2>
+                <button class="btn-add" onclick="ajouterResultat()">+</button>
+
+                <div class="admin-table-header" style="grid-template-columns: 1fr 1fr 50px;">
+                    <div>Compétition</div>
+                    <div>Résultat</div>
+                    <div></div>
+                </div>
+
+                <div id="resultatsContainer"></div>
+
+                <div class="d-flex justify-content-end mt-2">
+                    <button class="btn-or px-5 py-2 fs-6 play-bold" onclick="sauvegarderResultats()">
+                        <span>Sauvegarder</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        if (!sessionStorage.getItem('admin_connecte')) {
+            window.location.href = '../login.html';
+        }
+
+        // ===================== ACTUS =====================
+        let actus = JSON.parse(localStorage.getItem('blog_actus')) || [];
+
+        function renderActus() {
+            const container = document.getElementById('actusContainer');
+            container.innerHTML = '';
+            actus.forEach((actu, index) => {
+                const div = document.createElement('div');
+                div.className = 'admin-section-row';
+                div.style.gridTemplateColumns = '150px 1fr 180px 50px';
+                div.innerHTML = `
+                    <div>
+                        <input class="champ-admin-titre" type="text" value="${actu.titre}" placeholder="Titre de l'actu...">
+                    </div>
+                    <div>
+                        <textarea class="champ-admin" rows="6" placeholder="Contenu de l'actu...">${actu.contenu}</textarea>
+                    </div>
+                    <div class="d-flex flex-column align-items-center gap-2">
+                        <input type="file" accept="image/*" class="form-control form-control-sm" onchange="chargerImageActu(event, ${index})">
+                        <img id="preview-actu-${index}" class="img-preview" ${actu.image ? `src="${actu.image}" style="display:block"` : ''}>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button class="btn-delete" onclick="supprimerActu(${index})"><i class="bi bi-trash"></i></button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function ajouterActu() {
+            actus.push({ titre: '', contenu: '', image: '' });
+            renderActus();
+        }
+
+        function supprimerActu(index) {
+            if (confirm('Supprimer cette actualité ?')) {
+                actus.splice(index, 1);
+                renderActus();
+            }
+        }
+
+        function chargerImageActu(event, index) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                actus[index].image = e.target.result;
+                const preview = document.getElementById(`preview-actu-${index}`);
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function sauvegarderActus() {
+            document.querySelectorAll('#actusContainer .admin-section-row').forEach((row, index) => {
+                const titre = row.querySelector('input[type="text"]');
+                const contenu = row.querySelector('textarea');
+                actus[index].titre = titre ? titre.value : '';
+                actus[index].contenu = contenu ? contenu.value : '';
+            });
+            localStorage.setItem('blog_actus', JSON.stringify(actus));
+            alert('Actualités sauvegardées !');
+        }
+
+        // ===================== RESULTATS =====================
+        let resultats = JSON.parse(localStorage.getItem('derniers_resultats')) || [];
+
+        function renderResultats() {
+            const container = document.getElementById('resultatsContainer');
+            container.innerHTML = '';
+            resultats.forEach((r, index) => {
+                const row = document.createElement('div');
+                row.className = 'admin-section-row';
+                row.style.gridTemplateColumns = '1fr 1fr 50px';
+                row.innerHTML = `
+                    <div><input class="champ-admin" type="text" value="${r.competition}" placeholder="Nom de la compétition..."></div>
+                    <div><input class="champ-admin" type="text" value="${r.resultat}" placeholder="Résultat..."></div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button class="btn-delete" onclick="supprimerResultat(${index})"><i class="bi bi-trash"></i></button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        function ajouterResultat() {
+            resultats.push({ competition: '', resultat: '' });
+            renderResultats();
+        }
+
+        function supprimerResultat(index) {
+            resultats.splice(index, 1);
+            renderResultats();
+        }
+
+        function sauvegarderResultats() {
+            document.querySelectorAll('#resultatsContainer .admin-section-row').forEach((row, index) => {
+                const inputs = row.querySelectorAll('input');
+                resultats[index].competition = inputs[0].value;
+                resultats[index].resultat = inputs[1].value;
+            });
+            localStorage.setItem('derniers_resultats', JSON.stringify(resultats));
+            alert('Résultats sauvegardés !');
+        }
+
+        renderActus();
+        renderResultats();
+    </script>
+
+</body>
+</html>
