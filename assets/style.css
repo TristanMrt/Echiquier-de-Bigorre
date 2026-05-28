@@ -757,3 +757,85 @@ header {
     background-color: transparent;
     border: 2px solid var(--or-color);
 }
+
+
+
+
+/* ===================== ADMIN ===================== */
+.admin-nav a { color: var(--text-black); text-decoration: none; }
+.admin-nav a:hover { color: var(--or-color); }
+.admin-nav-active { color: var(--or-color) !important; }
+
+.admin-table-header {
+    display: grid;
+    grid-template-columns: 150px 1fr 180px 50px;
+    background: var(--secondary-color);
+    border: 1px solid var(--text-black);
+}
+
+.admin-table-header > div {
+    border: 1px solid var(--text-black);
+    padding: 10px;
+    font-weight: bold;
+}
+
+.admin-section-row {
+    display: grid;
+    grid-template-columns: 150px 1fr 180px 50px;
+    border: 1px solid var(--text-black);
+}
+
+.admin-section-row > div {
+    border: 1px solid var(--text-black);
+    padding: 10px;
+}
+
+.btn-add {
+    background: var(--secondary-color);
+    border: 1px solid var(--text-black);
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.btn-add:hover { background: var(--or-color); color: white; }
+
+.btn-delete {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-black);
+    font-size: 1.2rem;
+}
+
+.btn-delete:hover { color: red; }
+
+.champ-admin {
+    width: 100%;
+    border: none;
+    background: transparent;
+    resize: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
+.champ-admin-titre {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    resize: none;
+}
+
+.img-preview {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: none;
+}
+

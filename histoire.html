@@ -274,33 +274,16 @@
                                 plus</a>
                         </div>
                     </div>
-
-                    <!-- Séparateur -->
-                    <div class="d-flex justify-content-center align-items-center">
-                        <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-3 py-lg-5">
-                    </div>
-
-                    <!-- Section IV -->
-                    <h2 class="sous-titre fst-italic fs-3 mb-5 text-lg-end">IV - Situation actuelle</h2>
-
-                    <p class="text-center col-12 col-lg-8 mx-auto">Depuis 2024, le club évolue en Nationale 3. Il
-                        organise
-                        également chaque année deux tournois : l'Open International de Tarbes depuis 1993, ouvert à tous
-                        (plus d'informations sur la page Tournois), et le tournoi interne Marc Lasserre, un clin d'œil
-                        au
-                        fondateur du club.</p>
-
-                    <p class="text-center">Informations du club :
-                        href="https://www.echecs.asso.fr/FicheClub.aspx?Ref=1278"
-                        class="text-custom-or">https://www.echecs.asso.fr/FicheClub.aspx?Ref=1278</a></p>
-
-                    <div class="text-center my-5">
-                        <h2 class="play-bold fs-2 my-5 py-5">À suivre...</h2>
-                    </div>
-
                 </div>
             </div>
         </section>
+
+        <div id="sections-dynamiques" class="py-5">
+            <div class="row justify-content-center">
+                <div class="col-11 col-lg-10" id="contenu-dynamique">
+                </div>
+            </div>
+        </div>
 
     </main>
 
@@ -364,6 +347,8 @@
             <span>Actualités</span>
         </a>
     </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./JS/script.js"></script>
     <script>
         document.querySelectorAll('.bottom-nav-item').forEach(link => {
             if (link.href === window.location.href) {
@@ -371,9 +356,60 @@
             }
         });
     </script>
+    <script>
+        const sectionsParDefaut = [
+            {
+                titre: 'IV - Situation actuelle',
+                texte: 'Depuis 2024, le club évolue en Nationale 3. Il organise également chaque année deux tournois : l\'Open International de Tarbes depuis 1993, ouvert à tous (plus d\'informations sur la page Tournois), et le tournoi interne Marc Lasserre, un clin d\'œil au fondateur du club.',
+                image: ''
+            }
+        ];
+
+        const sections = JSON.parse(localStorage.getItem('histoire_sections'));
+
+        if (!sections) {
+            localStorage.setItem('histoire_sections', JSON.stringify(sectionsParDefaut));
+        }
+
+        const sectionsFinales = JSON.parse(localStorage.getItem('histoire_sections'));
+        const container = document.getElementById('contenu-dynamique');
+
+        sectionsFinales.forEach((section, index) => {
+            let html = '';
+
+            if (index > 0) {
+                html += `
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-3 py-lg-5">
+            </div>
+        `;
+            }
+
+            if (section.titre) {
+                html += `<h2 class="sous-titre fst-italic fs-3 mb-4">${section.titre}</h2>`;
+            }
+
+            if (section.image) {
+                html += `
+            <div class="row g-4 align-items-center mb-4">
+                <div class="col-12 col-lg-6">
+                    <p>${section.texte}</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <img src="${section.image}" class="img-fluid w-100 object-fit-cover rounded-3" style="height: 280px;">
+                </div>
+            </div>
+        `;
+            } else {
+                html += `<p class="mb-4">${section.texte}</p>`;
+            }
+
+            container.innerHTML += html;
+        });
+    </script>
 
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./JS/script.js"></script>
+
+
 </html>
