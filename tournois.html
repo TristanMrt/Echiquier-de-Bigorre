@@ -18,29 +18,49 @@
 
 <body class="inter bg-custom-secondary">
     <header>
-        <div class="container col-10">
-            <div class="row justify-content-center">
-                <div class="pt-4">
-                    <nav class="navbar navbar-expand-lg navbar-custom px-5 py-3 rounded-4">
-                        <div class="container-fluid px-0 d-flex align-items-center">
+        <div class="container-fluid col-10">
+            <div class="pt-3 pt-md-4">
+                <nav class="navbar navbar-expand-lg navbar-custom px-3 px-md-5 py-3 rounded-4">
+                    <div class="container-fluid px-0 d-flex align-items-center">
 
-                            <a class="navbar-brand p-0 me-0" href="./index.html">
-                                <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
-                            </a>
+                        <!-- Logo -->
+                        <a class="navbar-brand p-0 me-0" href="./index.html">
+                            <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
+                        </a>
 
-                            <ul class="navbar-nav mx-auto d-flex flex-row gap-5 mb-0">
-                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html">Histoire</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html">Tournois</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html">Tarifs</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html">Actualités</a>
-                                </li>
+                        <!-- Burger button (visible on mobile) -->
+                        <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon burger-color"></span>
+                        </button>
+
+                        <!-- Nav links + CTA (collapse on mobile) -->
+                        <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
+                            <ul
+                                class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
+                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html"><i
+                                            class="bi bi-book me-2 d-lg-none"></i>Histoire</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html"><i
+                                            class="bi bi-trophy me-2 d-lg-none"></i>Tournois</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html"><i
+                                            class="bi bi-tag me-2 d-lg-none"></i>Tarifs</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html"><i
+                                            class="bi bi-newspaper me-2 d-lg-none"></i>Actualités</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="./MLegales.html"></i>Mentions légales</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="./PConfidentialite.html"></i>Politique
+                                        de confidentialité</a></li>
                             </ul>
-
-                            <a href="./contact.html" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
-
+                            <div class="d-flex justify-content-center mb-2 mb-lg-0">
+                                <a href="./contact.html" class="btn-noir px-5 py-2"><span
+                                        class="fs-6 play-bold">Contact</span></a>
+                            </div>
                         </div>
-                    </nav>
-                </div>
+
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
@@ -49,8 +69,8 @@
         <div class="espace-sommaire mb-0">
             <div class="mt-5">
                 <div class="row justify-content-center">
-                    <div class="col-9 d-flex  align-items-center gap-3">
-                        <img src="./assets/img/h1.png" class="w-auto" style="height: 80px;">
+                    <div class="col-12 col-lg-9 px-3 px-lg-0 d-flex align-items-center gap-3">
+                        <img src="./assets/img/h1.png" class="header-icon">
                         <h1 class="play-bold mb-0 size-titre">Nos tournois</h1>
                     </div>
                 </div>
@@ -58,111 +78,104 @@
         </div>
 
         <!-- Section Calendrier -->
-        <div class="m-5">
-            <div class="">
+        <div class="px-3 px-lg-5 my-4 my-lg-5">
+            <section class="py-1">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                        <h2 class="play-bold text-custom-black fs-2 mb-4">Calendrier des prochains tournois</h2>
+                        <div class="d-flex flex-column gap-3">
 
-                <!-- Section Prochains tournois -->
-                <section class="py-1">
-                    <div class="row justify-content-center">
-                        <div class="col-9">
-                            <h2 class="play-bold text-custom-black fs-2 mb-4">Calendrier des prochains tournois</h2>
-                            <div class="d-flex flex-column gap-3">
-
-                                <div class="card-actu rounded-4">
-                                    <div
-                                        class="bg-custom-primary rounded-4 p-4 d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <h3 class="play-bold text-custom-white fs-4 mb-1">Nom du tournoi</h3>
-                                            <p class="text-custom-white fs-6 mb-0"><i class="bi bi-calendar me-2"></i>Du
-                                                01/01/2026 au 03/01/2026</p>
-                                        </div>
-                                        <div class="text-end">
-                                            <p class="text-custom-or fs-6 mb-0"><i class="bi bi-geo-alt me-2"></i>Lieu
-                                                du tournoi</p>
-                                        </div>
+                            <div class="card-actu rounded-4">
+                                <div
+                                    class="bg-custom-primary rounded-4 p-3 p-lg-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-2">
+                                    <div>
+                                        <h3 class="play-bold text-custom-white fs-4 mb-1">Nom du tournoi</h3>
+                                        <p class="text-custom-white fs-6 mb-0"><i class="bi bi-calendar me-2"></i>Du
+                                            01/01/2026 au 03/01/2026</p>
+                                    </div>
+                                    <div class="text-lg-end">
+                                        <p class="text-custom-or fs-6 mb-0"><i class="bi bi-geo-alt me-2"></i>Lieu du
+                                            tournoi</p>
                                     </div>
                                 </div>
-
-                                <div class="card-actu rounded-4">
-                                    <div
-                                        class="bg-custom-primary rounded-4 p-4 d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <h3 class="play-bold text-custom-white fs-4 mb-1">Nom du tournoi</h3>
-                                            <p class="text-custom-white fs-6 mb-0"><i class="bi bi-calendar me-2"></i>Du
-                                                01/01/2026 au 03/01/2026</p>
-                                        </div>
-                                        <div class="text-end">
-                                            <p class="text-custom-or fs-6 mb-0"><i class="bi bi-geo-alt me-2"></i>Lieu
-                                                du tournoi</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-actu rounded-4">
-                                    <div
-                                        class="bg-custom-primary rounded-4 p-4 d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <h3 class="play-bold text-custom-white fs-4 mb-1">Nom du tournoi</h3>
-                                            <p class="text-custom-white fs-6 mb-0"><i class="bi bi-calendar me-2"></i>Du
-                                                01/01/2026 au 03/01/2026</p>
-                                        </div>
-                                        <div class="text-end">
-                                            <p class="text-custom-or fs-6 mb-0"><i class="bi bi-geo-alt me-2"></i>Lieu
-                                                du tournoi</p>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
-                            <div class="my-5">
-                                <p class="text-custom-black fs-6">Si vous voulez en savoir plus sur les tournois
-                                    des
-                                    alentours, voici quelques liens :</p>
-                                <div class="d-flex gap-3">
-                                    <a href="https://www.echecs.asso.fr/ListeTournois.aspx?Action=TOURNOICOMITE&ComiteRef=65" target="_blank" class="text-custom-or">Tournois dans les Hautes-Pyrénées</a>
-                                    <a href="https://www.echecs.asso.fr/ListeTournois.aspx?Action=TOURNOICOMITE&ComiteRef=64" target="_blank" class="text-custom-or">Tournois dans les Pyrénées-Atlantiques</a>
+
+                            <div class="card-actu rounded-4">
+                                <div
+                                    class="bg-custom-primary rounded-4 p-3 p-lg-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-2">
+                                    <div>
+                                        <h3 class="play-bold text-custom-white fs-4 mb-1">Nom du tournoi</h3>
+                                        <p class="text-custom-white fs-6 mb-0"><i class="bi bi-calendar me-2"></i>Du
+                                            01/01/2026 au 03/01/2026</p>
+                                    </div>
+                                    <div class="text-lg-end">
+                                        <p class="text-custom-or fs-6 mb-0"><i class="bi bi-geo-alt me-2"></i>Lieu du
+                                            tournoi</p>
+                                    </div>
                                 </div>
+                            </div>
+
+                            <div class="card-actu rounded-4">
+                                <div
+                                    class="bg-custom-primary rounded-4 p-3 p-lg-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-2">
+                                    <div>
+                                        <h3 class="play-bold text-custom-white fs-4 mb-1">Nom du tournoi</h3>
+                                        <p class="text-custom-white fs-6 mb-0"><i class="bi bi-calendar me-2"></i>Du
+                                            01/01/2026 au 03/01/2026</p>
+                                    </div>
+                                    <div class="text-lg-end">
+                                        <p class="text-custom-or fs-6 mb-0"><i class="bi bi-geo-alt me-2"></i>Lieu du
+                                            tournoi</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="my-5">
+                            <p class="text-custom-black fs-6">Si vous voulez en savoir plus sur les tournois des
+                                alentours, voici quelques liens :</p>
+                            <div class="d-flex flex-column flex-lg-row gap-3">
+                                <a href="https://www.echecs.asso.fr/ListeTournois.aspx?Action=TOURNOICOMITE&ComiteRef=65"
+                                    target="_blank" class="text-custom-or">Tournois dans les Hautes-Pyrénées</a>
+                                <a href="https://www.echecs.asso.fr/ListeTournois.aspx?Action=TOURNOICOMITE&ComiteRef=64"
+                                    target="_blank" class="text-custom-or">Tournois dans les Pyrénées-Atlantiques</a>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
-
+                </div>
+            </section>
+        </div>
 
         </div>
 
         <div class="d-flex justify-content-center align-items-center">
-            <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-5">
+            <img src="./assets/img/separation.webp" alt="separation" class="w-25 my-1 py-4">
         </div>
 
         <!-- Section présentation Open -->
-        <div class="col-12 m-5 d-flex">
-            <div class="row justify-content-center align-items-center w-100">
-                <div class="col-6">
-                    <div class="offset-2 col-10">
-                        <h2 class="play-bold size-titre mb-5">L'open International d'Échecs de Tarbes</h2>
-                        <p class="fs-4">Chaque premier week-end de Pâques, l'Échiquier de Bigorre organise son Open
+        <section class="px-3 px-lg-5 my-4 my-lg-5">
+            <div class="row justify-content-center align-items-center">
+
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                    <div class="col-12 col-lg-10 offset-lg-2">
+                        <h2 class="play-bold size-titre mb-4 mb-lg-5">L'open International d'Échecs de Tarbes</h2>
+                        <p class="fs-6 fs-lg-4">Chaque premier week-end de Pâques, l'Échiquier de Bigorre organise son
+                            Open
                             International d'Échecs à Tarbes. La première édition de ce tournoi a eu lieu en 1993 et
-                            prend place chaque
-                            année depuis. Cette année marque la 32e édition pour les 100 ans du club, ce qui montre que
-                            le tournoi a su fidéliser ses participants au fil du temps.<br />
-                            <br />
+                            prend place chaque année depuis. Cette année marque la 32e édition pour les 100 ans du club,
+                            ce qui montre que le tournoi a su fidéliser ses participants au fil du temps.<br><br>
                             Deux tournois sont proposés : le tournoi principal en 7 rondes, avec une cadence de 1h30 par
-                            joueur, et le tournoi Blavignac pour les joueurs classés à moins de 1700 Elo. Le deuxième
-                            tournoi est organisé en hommage à Blavignac qui était l'un des joueurs du club à ses débuts,
-                            et son nom est resté attaché à cette compétition.<br />
-                            <br />
+                            joueur, et le tournoi Blavignac pour les joueurs classés à moins de 1700 Elo.<br><br>
                             Côté inscriptions : 40 € pour les seniors, 30 € pour les jeunes. La dotation du tournoi
-                            principal est de 500 €, avec 300 € pour le vainqueur.<br />
-                            <br />
-                            Habitués ou nouveaux venus, tout le monde est le bienvenu !<br />
-                            <br />
-                            Vous pouvez avoir plus d'informations sur le site de la FFE avec le lien ci-dessous !
+                            principal est de 500 €, avec 300 € pour le vainqueur.<br><br>
+                            Habitués ou nouveaux venus, tout le monde est le bienvenu !
                         </p>
                     </div>
                 </div>
 
-                <div class="col-6 overflow-hidden d-flex flex-row justify-content-center gap-2">
+                <!-- Affiches : masquées en mobile -->
+                <div
+                    class="col-lg-6 order-1 order-lg-2 d-none d-lg-flex overflow-hidden flex-row justify-content-center gap-2">
                     <div class="d-flex flex-column gap-1 pb-5 gap-2">
                         <img src="./assets/img/28.png" class="affiche-tournoi w-100">
                         <img src="./assets/img/29.png" class="affiche-tournoi w-100">
@@ -176,200 +189,204 @@
                         <img src="./assets/img/31.png" class="affiche-tournoi w-100">
                     </div>
                 </div>
+
             </div>
-        </div>
+        </section>
 
         <div class="d-flex justify-content-center align-items-center">
-            <img src="./assets/img/separation.webp" alt="separation" class="w-15 my-5 py-5">
+            <img src="./assets/img/separation.webp" alt="separation" class="w-25 my-1 py-4">
         </div>
 
         <div class="row justify-content-center my-5">
-            <h2 class="col-10 play-bold size-titre mb-5">Palmarès de toutes les éditions</h2>
-            <div class="col-9">
-                <table class="table table-bordered table-tournoi">
-                    <thead>
-                        <tr>
-                            <th class="col-4"></th>
-                            <th class="col-4">Vainqueur Open principal</th>
-                            <th class="col-4">Vainqueur tournoi Blavignac</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tournoi 1993</td>
-                            <td>KOMAROV Dimitri</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 1994</td>
-                            <td>ARCOTIK</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 1995</td>
-                            <td>INKIOV Vendeslav</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 1996</td>
-                            <td>INKIOV Vendeslav</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 1997</td>
-                            <td>BRICARD Emmanuel</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 1998</td>
-                            <td>RADULOV Ivan</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 1999</td>
-                            <td>KLUNT Klaus</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2000</td>
-                            <td>INKIOV Vendeslav</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2001</td>
-                            <td>RAUSIS Igors</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2002</td>
-                            <td>VELIKOV Petar</td>
-                            <td>LACROIX Romain</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2003</td>
-                            <td>BARSOV Alexei</td>
-                            <td>GOSSIEAUX Benoît</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2004</td>
-                            <td>COUSIGNE Frédéric</td>
-                            <td>CILLO Angelo</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2005</td>
-                            <td>CORNETTE Matthieu</td>
-                            <td>BENALI Boubaker</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2006</td>
-                            <td>AOUT Sébastien</td>
-                            <td>BAUMGARTNER Georges</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2007</td>
-                            <td>INKIOV Vendeslav</td>
-                            <td>ANKIRI Avner</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2008</td>
-                            <td>JOOSSIEN Arnaud</td>
-                            <td>SERRA Yvan</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2009</td>
-                            <td>INKIOV Vendeslav</td>
-                            <td>BIELEC Frédéric</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2010</td>
-                            <td>HAMDOUCHI Hicham</td>
-                            <td>SOISSONG Elzbieta</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2011</td>
-                            <td>BARZOV Alexi</td>
-                            <td>BENAYOUN David</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2012</td>
-                            <td>MAZE Sébastien</td>
-                            <td>RAGUENEAU Yann</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2013</td>
-                            <td>CORNETTE Matthieu</td>
-                            <td>LABAT Axel</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2014</td>
-                            <td>MAZE Sébastien</td>
-                            <td>JOIN Etienne</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2015</td>
-                            <td>GROMOVS Sergejs</td>
-                            <td>CAMILLERI Hervé</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2016</td>
-                            <td>ALBETS Armengol R.</td>
-                            <td>MATHEY Fannie</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2017</td>
-                            <td>LLANEZA VEGA M.</td>
-                            <td>BERRIFE William</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2018</td>
-                            <td>SELEBRAN Henri</td>
-                            <td>PHALIPPOU Philippe</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2019</td>
-                            <td>VIERS Mathieu</td>
-                            <td>VIERS Alexandre</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2020</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2021</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2022</td>
-                            <td>GLAVINA Pablo</td>
-                            <td>PHELIPOT Lucas</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2023</td>
-                            <td>BOUCQUET Emile</td>
-                            <td>BRUGUIER Florian</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2024</td>
-                            <td>VELA FRAGO Alberto</td>
-                            <td>KANTACHE-HAMMOUTI Adam</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2025</td>
-                            <td>LECOCQ Julien</td>
-                            <td>GABAIX John</td>
-                        </tr>
-                        <tr>
-                            <td>Tournoi 2026</td>
-                            <td>ESTADIEU Romero</td>
-                            <td>MAHAULT Valentin</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-12 col-lg-10 px-3 px-lg-0">
+                <h2 class="play-bold size-titre mb-5">Palmarès de toutes les éditions</h2>
             </div>
-        </div>              
-           
+            <div class="col-12 col-lg-9 px-3 px-lg-0">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-tournoi">
+                        <thead>
+                            <tr>
+                                <th class="col-4"></th>
+                                <th class="col-4">Vainqueur Open principal</th>
+                                <th class="col-4">Vainqueur tournoi Blavignac</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tournoi 1993</td>
+                                <td>KOMAROV Dimitri</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 1994</td>
+                                <td>ARCOTIK</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 1995</td>
+                                <td>INKIOV Vendeslav</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 1996</td>
+                                <td>INKIOV Vendeslav</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 1997</td>
+                                <td>BRICARD Emmanuel</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 1998</td>
+                                <td>RADULOV Ivan</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 1999</td>
+                                <td>KLUNT Klaus</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2000</td>
+                                <td>INKIOV Vendeslav</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2001</td>
+                                <td>RAUSIS Igors</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2002</td>
+                                <td>VELIKOV Petar</td>
+                                <td>LACROIX Romain</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2003</td>
+                                <td>BARSOV Alexei</td>
+                                <td>GOSSIEAUX Benoît</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2004</td>
+                                <td>COUSIGNE Frédéric</td>
+                                <td>CILLO Angelo</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2005</td>
+                                <td>CORNETTE Matthieu</td>
+                                <td>BENALI Boubaker</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2006</td>
+                                <td>AOUT Sébastien</td>
+                                <td>BAUMGARTNER Georges</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2007</td>
+                                <td>INKIOV Vendeslav</td>
+                                <td>ANKIRI Avner</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2008</td>
+                                <td>JOOSSIEN Arnaud</td>
+                                <td>SERRA Yvan</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2009</td>
+                                <td>INKIOV Vendeslav</td>
+                                <td>BIELEC Frédéric</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2010</td>
+                                <td>HAMDOUCHI Hicham</td>
+                                <td>SOISSONG Elzbieta</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2011</td>
+                                <td>BARZOV Alexi</td>
+                                <td>BENAYOUN David</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2012</td>
+                                <td>MAZE Sébastien</td>
+                                <td>RAGUENEAU Yann</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2013</td>
+                                <td>CORNETTE Matthieu</td>
+                                <td>LABAT Axel</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2014</td>
+                                <td>MAZE Sébastien</td>
+                                <td>JOIN Etienne</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2015</td>
+                                <td>GROMOVS Sergejs</td>
+                                <td>CAMILLERI Hervé</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2016</td>
+                                <td>ALBETS Armengol R.</td>
+                                <td>MATHEY Fannie</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2017</td>
+                                <td>LLANEZA VEGA M.</td>
+                                <td>BERRIFE William</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2018</td>
+                                <td>SELEBRAN Henri</td>
+                                <td>PHALIPPOU Philippe</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2019</td>
+                                <td>VIERS Mathieu</td>
+                                <td>VIERS Alexandre</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2020</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2021</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2022</td>
+                                <td>GLAVINA Pablo</td>
+                                <td>PHELIPOT Lucas</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2023</td>
+                                <td>BOUCQUET Emile</td>
+                                <td>BRUGUIER Florian</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2024</td>
+                                <td>VELA FRAGO Alberto</td>
+                                <td>KANTACHE-HAMMOUTI Adam</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2025</td>
+                                <td>LECOCQ Julien</td>
+                                <td>GABAIX John</td>
+                            </tr>
+                            <tr>
+                                <td>Tournoi 2026</td>
+                                <td>ESTADIEU Romero</td>
+                                <td>MAHAULT Valentin</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
 
 
 
@@ -412,7 +429,30 @@
             </div>
         </div>
     </footer>
+
+    <nav class="bottom-nav">
+        <a href="./histoire.html" class="bottom-nav-item">
+            <i class="bi bi-book"></i>
+            <span>Histoire</span>
+        </a>
+        <a href="./tournois.html" class="bottom-nav-item">
+            <i class="bi bi-trophy"></i>
+            <span>Tournois</span>
+        </a>
+        <a href="./contact.html" class="bottom-nav-item">
+            <i class="bi bi-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <a href="./tarifs.html" class="bottom-nav-item">
+            <i class="bi bi-tag"></i>
+            <span>Tarifs</span>
+        </a>
+        <a href="./actualites.html" class="bottom-nav-item">
+            <i class="bi bi-newspaper"></i>
+            <span>Actualités</span>
+        </a>
+    </nav>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="./JS/script.js"></script>
 </html>
