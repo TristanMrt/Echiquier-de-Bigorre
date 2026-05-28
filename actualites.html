@@ -52,6 +52,7 @@
                                 <li class="nav-item d-lg-none"><a class="nav-link fs-6"
                                         href="./PConfidentialite.html"></i>Politique
                                         de confidentialité</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6" href="./login.html"></i>Administration</a></li>
                             </ul>
                             <div class="d-flex justify-content-center mb-2 mb-lg-0">
                                 <a href="./contact.html" class="btn-noir px-5 py-2"><span
@@ -219,14 +220,18 @@
 
                                     <div id="postsFacebook">
                                         <div id="fb-root"></div>
-
                                         <script async defer crossorigin="anonymous"
-                                            src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v19.0"></script>
+                                            src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v19.0"
+                                            onload="fixFbWidth()">
+                                            </script>
 
-                                        <div class="fb-page" data-href="https://www.facebook.com/lechiquierdebigorre"
-                                            data-tabs="timeline" data-width="500" data-height="400"
-                                            data-small-header="true" data-adapt-container-width="true"
-                                            data-hide-cover="false" data-show-facepile="false">
+                                        <div id="fb-container" class="w-100">
+                                            <div class="fb-page"
+                                                data-href="https://www.facebook.com/lechiquierdebigorre"
+                                                data-tabs="timeline" data-width="" data-height="400"
+                                                data-small-header="true" data-adapt-container-width="true"
+                                                data-hide-cover="false" data-show-facepile="false">
+                                            </div>
                                         </div>
                                     </div>
 
@@ -372,6 +377,26 @@
             document.getElementById('btnFacebook').classList.replace('btn-switch-or', 'btn-switch-noir');
         }
     }
+</script>
+
+<script>
+function fixFbWidth() {
+    setTimeout(() => {
+        const container = document.getElementById('fb-container');
+        const width = container.offsetWidth;
+
+        // Reparse avec la bonne largeur
+        document.querySelector('.fb-page').setAttribute('data-width', width);
+        if (window.FB) {
+            FB.XFBML.parse(container);
+        }
+    }, 500);
+}
+
+// Re-fix aussi si on tourne l'écran
+window.addEventListener('resize', () => {
+    if (window.FB) fixFbWidth();
+});
 </script>
 
 </html>
