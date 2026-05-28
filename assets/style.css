@@ -53,6 +53,12 @@
     body {
         overflow-x: hidden;
     }
+
+    .row {
+        --bs-gutter-x: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 /* Navbar */
@@ -122,10 +128,13 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
+    width: 100vw;
+    max-width: 100vw;
     z-index: 100;
     background-color: var(--primary-color);
     padding: 0.5rem 0 1.5rem 0;
     align-items: flex-end;
+    box-sizing: border-box;
 }
 
 .bottom-nav-item {
@@ -439,6 +448,25 @@ header {
 .encadre {
     border: 2px solid var(--or-color) !important;
     padding: 1rem;
+}
+
+.histoire-img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (min-width: 1400px) {
+    .histoire-img {
+        height: 420px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .histoire-img {
+        height: 250px;
+    }
 }
 
 /* Page Tournois */
