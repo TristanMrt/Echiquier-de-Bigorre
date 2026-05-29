@@ -873,3 +873,13 @@ header {
     display: none;
 }
 
+.champ-admin,
+.champ-admin-titre {
+    color: var(--text-white);
+}
+
+.champ-admin::placeholder,
+.champ-admin-titre::placeholder {
+    color: rgba(249, 247, 244, 0.5);
+}
+
