@@ -10,7 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <title>Admin - Actualités</title>
 </head>
 
@@ -26,14 +28,17 @@
                             <img src="../assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
                         </a>
                         <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
-                            <ul class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
+                            <ul
+                                class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
                                 <li class="nav-item"><a class="nav-link fs-5" href="../histoire.html">Histoire</a></li>
                                 <li class="nav-item"><a class="nav-link fs-5" href="../tournois.html">Tournois</a></li>
                                 <li class="nav-item"><a class="nav-link fs-5" href="../tarifs.html">Tarifs</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="../actualites.html">Actualités</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../actualites.html">Actualités</a>
+                                </li>
                             </ul>
                             <div class="d-flex justify-content-center mb-2 mb-lg-0">
-                                <a href="../contact.html" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
+                                <a href="../contact.html" class="btn-noir px-5 py-2"><span
+                                        class="fs-6 play-bold">Contact</span></a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +65,8 @@
                 <li class="nav-item"><a class="nav-link fs-5" href="./AdminHistoire.html">Histoire</a></li>
                 <li class="nav-item"><a class="nav-link fs-5" href="./AdminTournois.html">Tournois</a></li>
                 <li class="nav-item"><a class="nav-link fs-5" href="./AdminTarifs.html">Tarifs</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 admin-nav-active" href="./AdminActus.html">Actualités</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 admin-nav-active" href="./AdminActus.html">Actualités</a>
+                </li>
             </ul>
         </div>
 
@@ -109,7 +115,13 @@
         }
 
         // ===================== ACTUS =====================
-        let actus = JSON.parse(localStorage.getItem('blog_actus')) || [];
+        let actus = JSON.parse(localStorage.getItem('blog_actus')) || [
+            { titre: 'Vainqueurs de l\'Open', contenu: 'Cette année, c\'est le Pallois Julien Lecocq qui a remporté le tournoi principal. Pour le tournoi Blavignac (moins de 1700 Elo), c\'est John Gabaix qui nous a offert une belle performance.', image: '' },
+            { titre: 'Instagram', contenu: 'Vous pourrez retrouver les actualités et les résultats du club dans les posts ou les storys. N\'hésitez pas à partager l\'information autour de vous !', image: '' },
+            { titre: 'Jardin Massey', contenu: 'Retrouvez-nous au Jardin Massey dans la salle associative côté médiathèque "Louis Aragon" pour des cours d\'échecs le mercredi, le samedi et le dimanche ! Des cours en extérieur peuvent avoir lieu en cas de beau temps.', image: '' },
+            { titre: 'Nouveau site !', contenu: 'Toutes les informations dont vous avez besoin sont disponibles ici. Et si vous avez des questions, n\'hésitez pas à envoyer un message via le formulaire depuis la page "Contact" !', image: '' },
+            { titre: 'Vainqueur du challenge Marc Lasserre r7', contenu: 'Le tournoi interne de l\'Échiquier de Bigorre, le Challenge Marc Lasserre, a rendu son verdict. C\'est Guillaume Vine qui a remporté cette édition après une belle série de parties maîtrisées. Rendez-vous à la prochaine édition qui a lieu le 30 mai.', image: '' },
+        ];
 
         function renderActus() {
             const container = document.getElementById('actusContainer');
@@ -174,7 +186,11 @@
         }
 
         // ===================== RESULTATS =====================
-        let resultats = JSON.parse(localStorage.getItem('derniers_resultats')) || [];
+        let resultats = JSON.parse(localStorage.getItem('derniers_resultats')) || [
+            { competition: 'Challenge Marc Lasserre', resultat: 'Victoire de Guillaume Vine - le 12 avril 2026' },
+            { competition: 'Open International de Tarbes (Blavignac)', resultat: 'Vainqueur : Mahault Valentin - le 6 avril 2026' },
+            { competition: 'Open International de Tarbes', resultat: 'Vainqueur : Estadieu Romero - le 6 avril 2026' },
+        ];
 
         function renderResultats() {
             const container = document.getElementById('resultatsContainer');
@@ -219,4 +235,5 @@
     </script>
 
 </body>
+
 </html>
