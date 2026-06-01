@@ -114,11 +114,15 @@
             }
         ];
 
-        let sections = JSON.parse(localStorage.getItem('histoire_sections'));
+        let sections = sectionsParDefaut;
 
-        if (!sections) {
-            sections = sectionsParDefaut;
-            localStorage.setItem('histoire_sections', JSON.stringify(sections));
+        async function chargerDonnees() {
+            try {
+                const response = await fetch('../admin/load.php?fichier=histoire');
+                const data = await response.json();
+                if (data && data.length > 0) sections = data;
+            } catch (error) { }
+            render();
         }
 
         function render() {
@@ -128,22 +132,22 @@
                 const row = document.createElement('div');
                 row.className = 'admin-section-row';
                 row.innerHTML = `
-                    <div>
-                        <textarea class="champ-admin-titre" rows="3" placeholder="Titre...">${section.titre}</textarea>
-                    </div>
-                    <div>
-                        <textarea class="champ-admin" rows="5" placeholder="Texte...">${section.texte}</textarea>
-                    </div>
-                    <div class="d-flex flex-column align-items-center gap-2">
-                        <input type="file" accept="image/*" class="form-control form-control-sm" onchange="chargerImage(event, ${index})">
-                        <img id="preview-${index}" class="img-preview" ${section.image ? `src="${section.image}" style="display:block"` : ''}>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <button class="btn-delete" onclick="supprimerSection(${index})">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </div>
-                `;
+            <div>
+                <textarea class="champ-admin-titre" rows="3" placeholder="Titre...">${section.titre}</textarea>
+            </div>
+            <div>
+                <textarea class="champ-admin" rows="5" placeholder="Texte...">${section.texte}</textarea>
+            </div>
+            <div class="d-flex flex-column align-items-center gap-2">
+                <input type="file" accept="image/*" class="form-control form-control-sm" onchange="chargerImage(event, ${index})">
+                <img id="preview-${index}" class="img-preview" ${section.image ? `src="${section.image}" style="display:block"` : ''}>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <button class="btn-delete" onclick="supprimerSection(${index})">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        `;
                 container.appendChild(row);
             });
         }
@@ -171,17 +175,27 @@
             reader.readAsDataURL(file);
         }
 
-        function sauvegarder() {
+        async function sauvegarder() {
             document.querySelectorAll('.admin-section-row').forEach((row, index) => {
                 const textareas = row.querySelectorAll('textarea');
                 if (textareas[0]) sections[index].titre = textareas[0].value;
                 if (textareas[1]) sections[index].texte = textareas[1].value;
             });
-            localStorage.setItem('histoire_sections', JSON.stringify(sections));
-            alert('Sauvegardé !');
+
+            const formData = new FormData();
+            formData.append('fichier', 'histoire');
+            formData.append('donnees', JSON.stringify(sections));
+
+            try {
+                const response = await fetch('../admin/save.php', { method: 'POST', body: formData });
+                const result = await response.json();
+                alert(result.success ? 'Sauvegardé !' : 'Erreur : ' + result.message);
+            } catch (error) {
+                alert('Erreur de connexion au serveur.');
+            }
         }
 
-        render();
+        chargerDonnees();
     </script>
 
 </body>

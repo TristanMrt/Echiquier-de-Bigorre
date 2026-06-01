@@ -114,14 +114,37 @@
             window.location.href = '../login.html';
         }
 
-        // ===================== ACTUS =====================
-        let actus = JSON.parse(localStorage.getItem('blog_actus')) || [
+        const actusParDefaut = [
             { titre: 'Vainqueurs de l\'Open', contenu: 'Cette année, c\'est le Pallois Julien Lecocq qui a remporté le tournoi principal. Pour le tournoi Blavignac (moins de 1700 Elo), c\'est John Gabaix qui nous a offert une belle performance.', image: '' },
             { titre: 'Instagram', contenu: 'Vous pourrez retrouver les actualités et les résultats du club dans les posts ou les storys. N\'hésitez pas à partager l\'information autour de vous !', image: '' },
-            { titre: 'Jardin Massey', contenu: 'Retrouvez-nous au Jardin Massey dans la salle associative côté médiathèque "Louis Aragon" pour des cours d\'échecs le mercredi, le samedi et le dimanche ! Des cours en extérieur peuvent avoir lieu en cas de beau temps.', image: '' },
+            { titre: 'Jardin Massey', contenu: 'Retrouvez-nous au Jardin Massey dans la salle associative côté médiathèque "Louis Aragon" pour des cours d\'échecs le mercredi, le samedi et le dimanche !', image: '' },
             { titre: 'Nouveau site !', contenu: 'Toutes les informations dont vous avez besoin sont disponibles ici. Et si vous avez des questions, n\'hésitez pas à envoyer un message via le formulaire depuis la page "Contact" !', image: '' },
-            { titre: 'Vainqueur du challenge Marc Lasserre r7', contenu: 'Le tournoi interne de l\'Échiquier de Bigorre, le Challenge Marc Lasserre, a rendu son verdict. C\'est Guillaume Vine qui a remporté cette édition après une belle série de parties maîtrisées. Rendez-vous à la prochaine édition qui a lieu le 30 mai.', image: '' },
+            { titre: 'Vainqueur du challenge Marc Lasserre r7', contenu: 'Le tournoi interne de l\'Échiquier de Bigorre, le Challenge Marc Lasserre, a rendu son verdict. C\'est Guillaume Vine qui a remporté cette édition.', image: '' },
         ];
+
+        const resultatsParDefaut = [
+            { competition: 'Challenge Marc Lasserre', resultat: 'Victoire de Guillaume Vine - le 12 avril 2026' },
+            { competition: 'Open International de Tarbes (Blavignac)', resultat: 'Vainqueur : Mahault Valentin - le 6 avril 2026' },
+            { competition: 'Open International de Tarbes', resultat: 'Vainqueur : Estadieu Romero - le 6 avril 2026' },
+        ];
+
+        let actus = actusParDefaut;
+        let resultats = resultatsParDefaut;
+
+        async function chargerDonnees() {
+            try {
+                const [resActus, resResultats] = await Promise.all([
+                    fetch('../admin/load.php?fichier=actus'),
+                    fetch('../admin/load.php?fichier=resultats')
+                ]);
+                const dataActus = await resActus.json();
+                const dataResultats = await resResultats.json();
+                if (dataActus && dataActus.length > 0) actus = dataActus;
+                if (dataResultats && dataResultats.length > 0) resultats = dataResultats;
+            } catch (error) { }
+            renderActus();
+            renderResultats();
+        }
 
         function renderActus() {
             const container = document.getElementById('actusContainer');
@@ -131,20 +154,16 @@
                 div.className = 'admin-section-row';
                 div.style.gridTemplateColumns = '150px 1fr 180px 50px';
                 div.innerHTML = `
-                    <div>
-                        <input class="champ-admin-titre" type="text" value="${actu.titre}" placeholder="Titre de l'actu...">
-                    </div>
-                    <div>
-                        <textarea class="champ-admin" rows="6" placeholder="Contenu de l'actu...">${actu.contenu}</textarea>
-                    </div>
-                    <div class="d-flex flex-column align-items-center gap-2">
-                        <input type="file" accept="image/*" class="form-control form-control-sm" onchange="chargerImageActu(event, ${index})">
-                        <img id="preview-actu-${index}" class="img-preview" ${actu.image ? `src="${actu.image}" style="display:block"` : ''}>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <button class="btn-delete" onclick="supprimerActu(${index})"><i class="bi bi-trash"></i></button>
-                    </div>
-                `;
+            <div><input class="champ-admin-titre" type="text" value="${actu.titre}" placeholder="Titre de l'actu..."></div>
+            <div><textarea class="champ-admin" rows="6" placeholder="Contenu de l'actu...">${actu.contenu}</textarea></div>
+            <div class="d-flex flex-column align-items-center gap-2">
+                <input type="file" accept="image/*" class="form-control form-control-sm" onchange="chargerImageActu(event, ${index})">
+                <img id="preview-actu-${index}" class="img-preview" ${actu.image ? `src="${actu.image}" style="display:block"` : ''}>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <button class="btn-delete" onclick="supprimerActu(${index})"><i class="bi bi-trash"></i></button>
+            </div>
+        `;
                 container.appendChild(div);
             });
         }
@@ -155,10 +174,7 @@
         }
 
         function supprimerActu(index) {
-            if (confirm('Supprimer cette actualité ?')) {
-                actus.splice(index, 1);
-                renderActus();
-            }
+            if (confirm('Supprimer cette actualité ?')) { actus.splice(index, 1); renderActus(); }
         }
 
         function chargerImageActu(event, index) {
@@ -174,23 +190,24 @@
             reader.readAsDataURL(file);
         }
 
-        function sauvegarderActus() {
+        async function sauvegarderActus() {
             document.querySelectorAll('#actusContainer .admin-section-row').forEach((row, index) => {
-                const titre = row.querySelector('input[type="text"]');
-                const contenu = row.querySelector('textarea');
-                actus[index].titre = titre ? titre.value : '';
-                actus[index].contenu = contenu ? contenu.value : '';
+                actus[index].titre = row.querySelector('input[type="text"]')?.value || '';
+                actus[index].contenu = row.querySelector('textarea')?.value || '';
             });
-            localStorage.setItem('blog_actus', JSON.stringify(actus));
-            alert('Actualités sauvegardées !');
-        }
 
-        // ===================== RESULTATS =====================
-        let resultats = JSON.parse(localStorage.getItem('derniers_resultats')) || [
-            { competition: 'Challenge Marc Lasserre', resultat: 'Victoire de Guillaume Vine - le 12 avril 2026' },
-            { competition: 'Open International de Tarbes (Blavignac)', resultat: 'Vainqueur : Mahault Valentin - le 6 avril 2026' },
-            { competition: 'Open International de Tarbes', resultat: 'Vainqueur : Estadieu Romero - le 6 avril 2026' },
-        ];
+            const formData = new FormData();
+            formData.append('fichier', 'actus');
+            formData.append('donnees', JSON.stringify(actus));
+
+            try {
+                const response = await fetch('../admin/save.php', { method: 'POST', body: formData });
+                const result = await response.json();
+                alert(result.success ? 'Actualités sauvegardées !' : 'Erreur : ' + result.message);
+            } catch (error) {
+                alert('Erreur de connexion au serveur.');
+            }
+        }
 
         function renderResultats() {
             const container = document.getElementById('resultatsContainer');
@@ -200,12 +217,12 @@
                 row.className = 'admin-section-row';
                 row.style.gridTemplateColumns = '1fr 1fr 50px';
                 row.innerHTML = `
-                    <div><input class="champ-admin" type="text" value="${r.competition}" placeholder="Nom de la compétition..."></div>
-                    <div><input class="champ-admin" type="text" value="${r.resultat}" placeholder="Résultat..."></div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <button class="btn-delete" onclick="supprimerResultat(${index})"><i class="bi bi-trash"></i></button>
-                    </div>
-                `;
+            <div><input class="champ-admin" type="text" value="${r.competition}" placeholder="Nom de la compétition..."></div>
+            <div><input class="champ-admin" type="text" value="${r.resultat}" placeholder="Résultat..."></div>
+            <div class="d-flex align-items-center justify-content-center">
+                <button class="btn-delete" onclick="supprimerResultat(${index})"><i class="bi bi-trash"></i></button>
+            </div>
+        `;
                 container.appendChild(row);
             });
         }
@@ -220,18 +237,27 @@
             renderResultats();
         }
 
-        function sauvegarderResultats() {
+        async function sauvegarderResultats() {
             document.querySelectorAll('#resultatsContainer .admin-section-row').forEach((row, index) => {
                 const inputs = row.querySelectorAll('input');
                 resultats[index].competition = inputs[0].value;
                 resultats[index].resultat = inputs[1].value;
             });
-            localStorage.setItem('derniers_resultats', JSON.stringify(resultats));
-            alert('Résultats sauvegardés !');
+
+            const formData = new FormData();
+            formData.append('fichier', 'resultats');
+            formData.append('donnees', JSON.stringify(resultats));
+
+            try {
+                const response = await fetch('../admin/save.php', { method: 'POST', body: formData });
+                const result = await response.json();
+                alert(result.success ? 'Résultats sauvegardés !' : 'Erreur : ' + result.message);
+            } catch (error) {
+                alert('Erreur de connexion au serveur.');
+            }
         }
 
-        renderActus();
-        renderResultats();
+        chargerDonnees();
     </script>
 
 </body>

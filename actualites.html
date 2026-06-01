@@ -10,10 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-    <title>Échiquier de Bigorre - Accueil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <title>Échiquier de Bigorre - Actualités</title>
 </head>
 
 <body class="inter bg-custom-secondary">
@@ -23,41 +21,28 @@
                 <nav class="navbar navbar-expand-lg navbar-custom px-2 px-md-5 py-3 rounded-4">
                     <div class="container-fluid px-0 d-flex align-items-center">
 
-                        <!-- Logo -->
                         <a class="navbar-brand p-0 me-0" href="./index.html">
                             <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
                         </a>
 
-                        <!-- Burger button (visible on mobile) -->
                         <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
                             aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon burger-color"></span>
                         </button>
 
-                        <!-- Nav links + CTA (collapse on mobile) -->
                         <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
-                            <ul
-                                class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
-                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html"><i
-                                            class="bi bi-book me-2 d-lg-none"></i>Histoire</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html"><i
-                                            class="bi bi-trophy me-2 d-lg-none"></i>Tournois</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html"><i
-                                            class="bi bi-tag me-2 d-lg-none"></i>Tarifs</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html"><i
-                                            class="bi bi-newspaper me-2 d-lg-none"></i>Actualités</a></li>
-                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
-                                        href="./MLegales.html"></i>Mentions légales</a></li>
-                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
-                                        href="./PConfidentialite.html"></i>Politique
-                                        de confidentialité</a></li>
-                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
-                                        href="./login.html"></i>Administration</a></li>
+                            <ul class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
+                                <li class="nav-item"><a class="nav-link fs-5" href="./histoire.html"><i class="bi bi-book me-2 d-lg-none"></i>Histoire</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tournois.html"><i class="bi bi-trophy me-2 d-lg-none"></i>Tournois</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./tarifs.html"><i class="bi bi-tag me-2 d-lg-none"></i>Tarifs</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="./actualites.html"><i class="bi bi-newspaper me-2 d-lg-none"></i>Actualités</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6" href="./MLegales.html">Mentions légales</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6" href="./PConfidentialite.html">Politique de confidentialité</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6" href="./login.html">Administration</a></li>
                             </ul>
                             <div class="d-flex justify-content-center mb-2 mb-lg-0">
-                                <a href="./contact.html" class="btn-noir px-5 py-2"><span
-                                        class="fs-6 play-bold">Contact</span></a>
+                                <a href="./contact.html" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
                             </div>
                         </div>
 
@@ -68,7 +53,6 @@
     </header>
 
     <main>
-        <!-- Titre -->
         <div class="espace-sommaire mb-0">
             <div class="mt-5">
                 <div class="row justify-content-center">
@@ -88,11 +72,8 @@
                         <!-- Colonne gauche : Blog -->
                         <div class="col-12 col-lg-6 d-flex">
                             <div class="card-actu rounded-4 w-100" style="height: 715px;">
-                                <div
-                                    class="bg-custom-primary rounded-4 p-3 p-md-4 d-flex flex-column gap-3 scroll-custom h-100">
-
+                                <div class="bg-custom-primary rounded-4 p-3 p-md-4 d-flex flex-column gap-3 scroll-custom h-100">
                                     <h2 class="play-bold text-custom-white fs-3">Blog</h2>
-
                                     <div class="accordion px-1 pb-1" id="accordionBlog"></div>
                                 </div>
                             </div>
@@ -110,7 +91,6 @@
                                     <div class="d-flex flex-row gap-2 mb-3">
                                         <button class="btn-switch btn-switch-or play-bold px-4 py-1 fs-6"
                                             id="btnFacebook" onclick="switchReseau('facebook')">Facebook</button>
-
                                         <button class="btn-switch btn-switch-noir play-bold px-4 py-1 fs-6"
                                             id="btnInstagram" onclick="switchReseau('instagram')">Instagram</button>
                                     </div>
@@ -119,9 +99,7 @@
                                         <div id="fb-root"></div>
                                         <script async defer crossorigin="anonymous"
                                             src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v19.0"
-                                            onload="fixFbWidth()">
-                                            </script>
-
+                                            onload="fixFbWidth()"></script>
                                         <div id="fb-container" class="w-100">
                                             <div class="fb-page"
                                                 data-href="https://www.facebook.com/lechiquierdebigorre"
@@ -144,16 +122,12 @@
                             <!-- Résultats Matchs -->
                             <div class="card-actu rounded-4" style="height: 240px;">
                                 <div class="bg-custom-primary rounded-4 p-3 p-md-4 h-100 scroll-custom">
-
                                     <h2 class="play-bold text-custom-white fs-3 mb-3">Résultats Matchs</h2>
-
                                     <div class="d-flex flex-column gap-3" id="resultats-container"></div>
-
                                 </div>
                             </div>
 
                         </div>
-                        <!-- Fin colonne droite -->
 
                     </div>
                 </div>
@@ -161,40 +135,30 @@
         </section>
     </main>
 
-    <!-- ===================== FOOTER ===================== -->
     <footer class="bg-custom-primary py-4 py-md-5">
         <div class="container">
             <div class="d-flex flex-column align-items-center gap-3 gap-md-4">
-
                 <div class="d-flex flex-column align-items-center gap-3">
                     <a href="./index.html">
                         <img src="./assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
                     </a>
-
-                    <!-- Liens footer : colonne sur mobile, ligne sur desktop -->
-                    <div
-                        class="d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-2 gap-md-4 text-center">
+                    <div class="d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-2 gap-md-4 text-center">
                         <a class="link-white fs-6" href="./histoire.html">Histoire</a>
                         <a class="link-white fs-6" href="./tournois.html">Tournois</a>
                         <a class="link-white fs-6" href="./inscriptions.html">Inscriptions</a>
                         <a class="link-white fs-6" href="./actualites.html">Actualités</a>
                         <a class="link-white fs-6" href="./contact.html">Contact</a>
                     </div>
-
                     <a href="#">
                         <img src="./assets/img/facebook.png" alt="Logo Échiquier de Bigorre" class="logo-img">
                     </a>
                 </div>
-
                 <div class="d-none d-md-grid w-100" style="grid-template-columns: 1fr auto 1fr;">
                     <a class="link-white fs-6 text-end" href="./MLegales.html">Mentions légales</a>
                     <a class="link-white fs-6 text-center px-4" href="./login.html">Administration</a>
-                    <a class="link-white fs-6 text-start" href="./PConfidentialite.html">Politique de
-                        confidentialité</a>
+                    <a class="link-white fs-6 text-start" href="./PConfidentialite.html">Politique de confidentialité</a>
                 </div>
-
                 <p class="text-custom-white mb-0 fs-6 text-center">© Échiquier de Bigorre 2026, tous droits réservés</p>
-
             </div>
         </div>
     </footer>
@@ -224,7 +188,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./JS/script.js"></script>
-
     <script>
         function switchReseau(reseau) {
             if (reseau === 'facebook') {
@@ -253,69 +216,57 @@
             if (window.FB) fixFbWidth();
         });
 
-        // ===================== BLOG =====================
-        const actusParDefaut = [
-            { titre: 'Vainqueurs de l\'Open', contenu: 'Cette année, c\'est le Pallois Julien Lecocq qui a remporté le tournoi principal. Pour le tournoi Blavignac (moins de 1700 Elo), c\'est John Gabaix qui nous a offert une belle performance.', image: '' },
-            { titre: 'Instagram', contenu: 'Vous pourrez retrouver les actualités et les résultats du club dans les posts ou les storys. N\'hésitez pas à partager l\'information autour de vous !', image: '' },
-            { titre: 'Jardin Massey', contenu: 'Retrouvez-nous au Jardin Massey dans la salle associative côté médiathèque "Louis Aragon" pour des cours d\'échecs le mercredi, le samedi et le dimanche ! Des cours en extérieur peuvent avoir lieu en cas de beau temps.', image: '' },
-            { titre: 'Nouveau site !', contenu: 'Toutes les informations dont vous avez besoin sont disponibles ici. Et si vous avez des questions, n\'hésitez pas à envoyer un message via le formulaire depuis la page "Contact" !', image: '' },
-            { titre: 'Vainqueur du challenge Marc Lasserre r7', contenu: 'Le tournoi interne de l\'Échiquier de Bigorre, le Challenge Marc Lasserre, a rendu son verdict. C\'est Guillaume Vine qui a remporté cette édition après une belle série de parties maîtrisées. Rendez-vous à la prochaine édition qui a lieu le 30 mai.', image: '' },
-        ];
+        async function chargerActualites() {
+            let actus = [];
+            let resultats = [];
 
-        if (!localStorage.getItem('blog_actus')) {
-            localStorage.setItem('blog_actus', JSON.stringify(actusParDefaut));
-        }
+            try {
+                const [resActus, resResultats] = await Promise.all([
+                    fetch('./admin/load.php?fichier=actus'),
+                    fetch('./admin/load.php?fichier=resultats')
+                ]);
+                actus = await resActus.json();
+                resultats = await resResultats.json();
+            } catch (error) {}
 
-        const actus = JSON.parse(localStorage.getItem('blog_actus'));
-        const blogContainer = document.getElementById('accordionBlog');
-
-        actus.forEach((actu, index) => {
-            const isFirst = index === 0;
-            blogContainer.innerHTML += `
-                <div class="accordion-item rounded-3 mb-2 ms-1 me-1 me-md-3">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button ${isFirst ? '' : 'collapsed'} sous-titre fs-5" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#actu-dyn-${index}">
-                            ${actu.titre}
-                        </button>
-                    </h2>
-                    <div id="actu-dyn-${index}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}"
-                        data-bs-parent="#accordionBlog">
-                        <div class="accordion-body">
-                            ${actu.image ? `<img src="${actu.image}" class="img-fluid rounded-3 mb-3" style="max-height: 200px;">` : ''}
-                            <p class="fs-6">${actu.contenu}</p>
+            // Blog
+            const blogContainer = document.getElementById('accordionBlog');
+            actus.forEach((actu, index) => {
+                const isFirst = index === 0;
+                blogContainer.innerHTML += `
+                    <div class="accordion-item rounded-3 mb-2 ms-1 me-1 me-md-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button ${isFirst ? '' : 'collapsed'} sous-titre fs-5" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#actu-dyn-${index}">
+                                ${actu.titre}
+                            </button>
+                        </h2>
+                        <div id="actu-dyn-${index}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}"
+                            data-bs-parent="#accordionBlog">
+                            <div class="accordion-body">
+                                ${actu.image ? `<img src="${actu.image}" class="img-fluid rounded-3 mb-3" style="max-height: 200px;">` : ''}
+                                <p class="fs-6">${actu.contenu}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
-        });
+                `;
+            });
 
-        // ===================== RESULTATS =====================
-        const resultatsParDefaut = [
-            { competition: 'Challenge Marc Lasserre', resultat: 'Victoire de Guillaume Vine - le 12 avril 2026' },
-            { competition: 'Open International de Tarbes (Blavignac)', resultat: 'Vainqueur : Mahault Valentin - le 6 avril 2026' },
-            { competition: 'Open International de Tarbes', resultat: 'Vainqueur : Estadieu Romero - le 6 avril 2026' },
-        ];
-
-        if (!localStorage.getItem('derniers_resultats')) {
-            localStorage.setItem('derniers_resultats', JSON.stringify(resultatsParDefaut));
+            // Résultats
+            const resultatsContainer = document.getElementById('resultats-container');
+            resultats.forEach(r => {
+                resultatsContainer.innerHTML += `
+                    <div class="d-flex align-items-center gap-3 p-2 rounded-3">
+                        <div>
+                            <p class="text-custom-white fs-6 mb-0 fw-bold">${r.competition}</p>
+                            <p class="text-custom-white fs-6 mb-0">${r.resultat}</p>
+                        </div>
+                    </div>
+                `;
+            });
         }
 
-        const resultats = JSON.parse(localStorage.getItem('derniers_resultats'));
-        const resultatsContainer = document.getElementById('resultats-container');
-
-        resultats.forEach(r => {
-            resultatsContainer.innerHTML += `
-                <div class="d-flex align-items-center gap-3 p-2 rounded-3">
-                    <div>
-                        <p class="text-custom-white fs-6 mb-0 fw-bold">${r.competition}</p>
-                        <p class="text-custom-white fs-6 mb-0">${r.resultat}</p>
-                    </div>
-                </div>
-            `;
-        });
+        chargerActualites();
     </script>
 </body>
-</body>
-
 </html>
