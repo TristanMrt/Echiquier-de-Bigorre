@@ -1,0 +1,11 @@
+# Bloquer l'accès direct aux fichiers PHP depuis l'extérieur
+# sauf pour save.php et load.php qui sont appelés en AJAX
+
+# Interdire le listage du dossier
+Options -Indexes
+
+# Bloquer l'accès direct au dossier admin depuis le navigateur
+# (uniquement les requêtes AJAX sont autorisées)
+<Files "*.php">
+    Header set X-Content-Type-Options "nosniff"
+</Files>

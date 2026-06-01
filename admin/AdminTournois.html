@@ -146,8 +146,7 @@
             window.location.href = '../login.html';
         }
 
-        // ===================== PALMARES =====================
-        let palmares = JSON.parse(localStorage.getItem('palmares')) || [
+        const palmaresParDefaut = [
             { tournoi: 'Tournoi 1993', open: 'KOMAROV Dimitri', blavignac: '' },
             { tournoi: 'Tournoi 1994', open: 'ARCOTIK', blavignac: '' },
             { tournoi: 'Tournoi 1995', open: 'INKIOV Vendeslav', blavignac: '' },
@@ -184,6 +183,24 @@
             { tournoi: 'Tournoi 2026', open: 'ESTADIEU Romero', blavignac: 'MAHAULT Valentin' },
         ];
 
+        let palmares = palmaresParDefaut;
+        let tournois = [];
+
+        async function chargerDonnees() {
+            try {
+                const [resPalmares, resTournois] = await Promise.all([
+                    fetch('../admin/load.php?fichier=palmares'),
+                    fetch('../admin/load.php?fichier=tournois')
+                ]);
+                const dataPalmares = await resPalmares.json();
+                const dataTournois = await resTournois.json();
+                if (dataPalmares && dataPalmares.length > 0) palmares = dataPalmares;
+                if (dataTournois) tournois = dataTournois;
+            } catch (error) { }
+            renderPalmares();
+            renderTournois();
+        }
+
         function renderPalmares() {
             const container = document.getElementById('palmaresContainer');
             container.innerHTML = '';
@@ -192,13 +209,13 @@
                 row.className = 'admin-section-row';
                 row.style.gridTemplateColumns = '1fr 1fr 1fr 50px';
                 row.innerHTML = `
-                    <div><input class="champ-admin" type="text" value="${ligne.tournoi}" placeholder="Ex: Tournoi 2027"></div>
-                    <div><input class="champ-admin" type="text" value="${ligne.open}" placeholder="Vainqueur..."></div>
-                    <div><input class="champ-admin" type="text" value="${ligne.blavignac}" placeholder="Vainqueur..."></div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <button class="btn-delete" onclick="supprimerLigne(${index})"><i class="bi bi-trash"></i></button>
-                    </div>
-                `;
+            <div><input class="champ-admin" type="text" value="${ligne.tournoi}" placeholder="Ex: Tournoi 2027"></div>
+            <div><input class="champ-admin" type="text" value="${ligne.open}" placeholder="Vainqueur..."></div>
+            <div><input class="champ-admin" type="text" value="${ligne.blavignac}" placeholder="Vainqueur..."></div>
+            <div class="d-flex align-items-center justify-content-center">
+                <button class="btn-delete" onclick="supprimerLigne(${index})"><i class="bi bi-trash"></i></button>
+            </div>
+        `;
                 container.appendChild(row);
             });
         }
@@ -213,19 +230,26 @@
             renderPalmares();
         }
 
-        function sauvegarderPalmares() {
+        async function sauvegarderPalmares() {
             document.querySelectorAll('#palmaresContainer .admin-section-row').forEach((row, index) => {
                 const inputs = row.querySelectorAll('input');
                 palmares[index].tournoi = inputs[0].value;
                 palmares[index].open = inputs[1].value;
                 palmares[index].blavignac = inputs[2].value;
             });
-            localStorage.setItem('palmares', JSON.stringify(palmares));
-            alert('Palmarès sauvegardé !');
-        }
 
-        // ===================== PROCHAINS TOURNOIS =====================
-        let tournois = JSON.parse(localStorage.getItem('prochains_tournois')) || [];
+            const formData = new FormData();
+            formData.append('fichier', 'palmares');
+            formData.append('donnees', JSON.stringify(palmares));
+
+            try {
+                const response = await fetch('../admin/save.php', { method: 'POST', body: formData });
+                const result = await response.json();
+                alert(result.success ? 'Palmarès sauvegardé !' : 'Erreur : ' + result.message);
+            } catch (error) {
+                alert('Erreur de connexion au serveur.');
+            }
+        }
 
         function renderTournois() {
             const container = document.getElementById('tournoiContainer');
@@ -235,14 +259,14 @@
                 row.className = 'admin-section-row';
                 row.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 50px';
                 row.innerHTML = `
-                    <div><input class="champ-admin" type="text" value="${t.nom}" placeholder="Nom du tournoi"></div>
-                    <div><input class="champ-admin" type="date" value="${t.dateDebut}"></div>
-                    <div><input class="champ-admin" type="date" value="${t.dateFin}"></div>
-                    <div><input class="champ-admin" type="text" value="${t.lieu}" placeholder="Lieu"></div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <button class="btn-delete" onclick="supprimerTournoi(${index})"><i class="bi bi-trash"></i></button>
-                    </div>
-                `;
+            <div><input class="champ-admin" type="text" value="${t.nom}" placeholder="Nom du tournoi"></div>
+            <div><input class="champ-admin" type="date" value="${t.dateDebut}"></div>
+            <div><input class="champ-admin" type="date" value="${t.dateFin}"></div>
+            <div><input class="champ-admin" type="text" value="${t.lieu}" placeholder="Lieu"></div>
+            <div class="d-flex align-items-center justify-content-center">
+                <button class="btn-delete" onclick="supprimerTournoi(${index})"><i class="bi bi-trash"></i></button>
+            </div>
+        `;
                 container.appendChild(row);
             });
         }
@@ -257,7 +281,7 @@
             renderTournois();
         }
 
-        function sauvegarderTournois() {
+        async function sauvegarderTournois() {
             document.querySelectorAll('#tournoiContainer .admin-section-row').forEach((row, index) => {
                 const inputs = row.querySelectorAll('input');
                 tournois[index].nom = inputs[0].value;
@@ -265,12 +289,21 @@
                 tournois[index].dateFin = inputs[2].value;
                 tournois[index].lieu = inputs[3].value;
             });
-            localStorage.setItem('prochains_tournois', JSON.stringify(tournois));
-            alert('Tournois sauvegardés !');
+
+            const formData = new FormData();
+            formData.append('fichier', 'tournois');
+            formData.append('donnees', JSON.stringify(tournois));
+
+            try {
+                const response = await fetch('../admin/save.php', { method: 'POST', body: formData });
+                const result = await response.json();
+                alert(result.success ? 'Tournois sauvegardés !' : 'Erreur : ' + result.message);
+            } catch (error) {
+                alert('Erreur de connexion au serveur.');
+            }
         }
 
-        renderPalmares();
-        renderTournois();
+        chargerDonnees();
     </script>
 
 </body>
