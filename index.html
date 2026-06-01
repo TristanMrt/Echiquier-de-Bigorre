@@ -54,7 +54,8 @@
                                 <li class="nav-item d-lg-none"><a class="nav-link fs-6"
                                         href="./PConfidentialite.html"></i>Politique
                                         de confidentialité</a></li>
-                                <li class="nav-item d-lg-none"><a class="nav-link fs-6" href="./login.html"></i>Administration</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="./login.html"></i>Administration</a></li>
                             </ul>
                             <div class="d-flex justify-content-center mb-2 mb-lg-0">
                                 <a href="./contact.html" class="btn-noir px-5 py-2"><span
@@ -189,47 +190,24 @@
         <!-- ===================== SECTION ACTUS ===================== -->
         <section>
             <div class="row g-0 flex-column flex-lg-row">
-                <!-- Carte principale -->
 
+                <!-- Carte principale : actu la plus récente -->
                 <div class="col-12 col-lg-6 bg-custom-primary d-flex justify-content-center pt-4 py-md-5 px-3 px-md-0">
-                    <a href="./actualites.html"
+                    <a href="./actualites.html" id="carte-principale-actu"
                         class="col-12 col-lg-9 carte-principale rounded-4 p-4 d-flex flex-column justify-content-between gap-3 text-decoration-none">
-                        <h2 class="play-bold text-custom-white fs-2 fs-md-1">Vainqueurs de l'Open</h2>
-                        <p class="text-custom-white fs-6 fs-md-5">Cette année, c'est le Pallois Julien Lecocq qui a
-                            remporté le tournoi principal. Pour le tournoi Blavignac (moins de 1700 Elo), c'est John
-                            Gabaix qui nous a offert une belle performance.</p>
                     </a>
                 </div>
 
-                <!-- Cartes liens -->
-
+                <!-- Cartes liens : 3 actus suivantes -->
                 <div
                     class="col-12 col-lg-6 bg-custom-primary bg-lg-custom-secondary d-flex flex-column gap-3 p-3 p-md-5">
-                    <a href="./actualites.html"
-                        class="carte-lien rounded-4 p-3 p-md-4 d-flex align-items-center justify-content-between text-decoration-none">
-                        <div class="col-10 col-md-8">
-                            <h3 class="play-bold fs-5 mb-1">Instagram</h3>
-                            <p class="mb-0 fs-6">Vous pourrez retrouver les actualités et les résultats du club dans les
-                                posts ou les storys. N'hésitez pas à partager l'information autour de vous !</p>
-                        </div>
-                    </a> <a href="./actualites.html"
-                        class="carte-lien rounded-4 p-3 p-md-4 d-flex align-items-center justify-content-between text-decoration-none">
-                        <div class="col-10 col-md-8">
-                            <h3 class="play-bold fs-5 mb-1">Jardin Massey</h3>
-                            <p class="mb-0 fs-6">Retrouvez-nous au Jardin Massey dans la salle associative côté
-                                médiathèque "Louis Aragon" pour des cours d'échecs le mercredi et le samedi !</p>
-                        </div>
-                    </a> <a href="./actualites.html"
-                        class="carte-lien rounded-4 p-3 p-md-4 d-flex align-items-center justify-content-between text-decoration-none">
-                        <div class="col-10 col-md-8">
-                            <h3 class="play-bold fs-5 mb-1">Nouveau site !</h3>
-                            <p class="mb-0 fs-6">Toutes les informations dont vous avez besoin sont disponibles ici. Et
-                                si vous avez des questions, n'hésitez pas à envoyer un message via le formulaire !</p>
-                        </div>
-                    </a>
-                    <div class="d-none d-lg-flex justify-content-center my-3 my-md-5"> <a href="#"
-                            class="btn-noir px-4 py-2 fs-5 play-bold"><span>Actualités</span></a> </div>
+                    <div id="cartes-liens-actus" class="d-flex flex-column gap-3"></div>
+                    <div class="d-none d-lg-flex justify-content-center my-3 my-md-5">
+                        <a href="./actualites.html"
+                            class="btn-noir px-4 py-2 fs-5 play-bold"><span>Actualités</span></a>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -299,5 +277,57 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./JS/script.js"></script>
+
+<script>
+    // ===== Affichage des 4 dernières actus dans la section index =====
+    const actusParDefaut = [
+        { titre: 'Vainqueurs de l\'Open', contenu: 'Cette année, c\'est le Pallois Julien Lecocq qui a remporté le tournoi principal.', image: '' },
+        { titre: 'Instagram', contenu: 'Vous pourrez retrouver les actualités et les résultats du club dans les posts ou les storys.', image: '' },
+        { titre: 'Jardin Massey', contenu: 'Retrouvez-nous au Jardin Massey pour des cours d\'échecs le mercredi et le samedi !', image: '' },
+        { titre: 'Nouveau site !', contenu: 'Toutes les informations dont vous avez besoin sont disponibles ici.', image: '' },
+    ];
+
+    const actus = JSON.parse(localStorage.getItem('blog_actus')) || actusParDefaut;
+    const quatreActus = actus.slice(0, 4);
+
+    // --- Carte principale (1ère actu) ---
+    const principale = quatreActus[0];
+    const carteP = document.getElementById('carte-principale-actu');
+    if (principale) {
+        if (principale.image) {
+            carteP.style.backgroundImage = `url('${principale.image}')`;
+            carteP.style.backgroundSize = 'cover';
+            carteP.style.backgroundPosition = 'center';
+        }
+        carteP.innerHTML = `
+            ${principale.image ? '<div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);border-radius:inherit;"></div>' : ''}
+            <h2 class="play-bold text-custom-white fs-2 fs-md-1 position-relative">${principale.titre}</h2>
+            <p class="text-custom-white fs-6 fs-md-5 position-relative">${principale.contenu.substring(0, 150)}${principale.contenu.length > 150 ? '...' : ''}</p>
+        `;
+    }
+
+    // --- Cartes liens (2e, 3e, 4e actus) ---
+    const liensContainer = document.getElementById('cartes-liens-actus');
+    quatreActus.slice(1).forEach(actu => {
+        const a = document.createElement('a');
+        a.href = './actualites.html';
+        a.className = 'carte-lien rounded-4 p-3 p-md-4 d-flex align-items-center justify-content-between text-decoration-none position-relative overflow-hidden';
+
+        if (actu.image) {
+            a.style.backgroundImage = `url('${actu.image}')`;
+            a.style.backgroundSize = 'cover';
+            a.style.backgroundPosition = 'center';
+        }
+
+        a.innerHTML = `
+            ${actu.image ? '<div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);border-radius:inherit;"></div>' : ''}
+            <div class="col-10 col-md-8 position-relative">
+                <h3 class="play-bold fs-5 mb-1">${actu.titre}</h3>
+                <p class="mb-0 fs-6">${actu.contenu.substring(0, 100)}${actu.contenu.length > 100 ? '...' : ''}</p>
+            </div>
+        `;
+        liensContainer.appendChild(a);
+    });
+</script>
 
 </html>
