@@ -1,7 +1,0 @@
-# Interdire tout accès direct aux fichiers JSON
-Options -Indexes
-
-<FilesMatch "\.json$">
-    Order Allow,Deny
-    Deny from all
-</FilesMatch>
