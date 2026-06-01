@@ -10,32 +10,59 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <title>Admin - Tournois</title>
 </head>
 
 <body class="inter bg-custom-secondary">
 
-    <!-- HEADER -->
+    <!-- ===================== HEADER ===================== -->
     <header>
         <div class="container-fluid col-10">
             <div class="pt-3 pt-md-4">
-                <nav class="navbar navbar-expand-lg navbar-custom px-3 px-md-5 py-3 rounded-4">
+                <nav class="navbar navbar-expand-lg navbar-custom px-2 px-md-5 py-3 rounded-4">
                     <div class="container-fluid px-0 d-flex align-items-center">
+
+                        <!-- Logo -->
                         <a class="navbar-brand p-0 me-0" href="../index.html">
                             <img src="../assets/img/logo edb.png" alt="Logo Échiquier de Bigorre" class="logo-img">
                         </a>
+
+                        <!-- Burger button (visible on mobile) -->
+                        <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon burger-color"></span>
+                        </button>
+
+                        <!-- Nav links + CTA (collapse on mobile) -->
                         <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
-                            <ul class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
-                                <li class="nav-item"><a class="nav-link fs-5" href="../histoire.html">Histoire</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="../tournois.html">Tournois</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="../tarifs.html">Tarifs</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="../actualites.html">Actualités</a></li>
+                            <ul
+                                class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
+                                <li class="nav-item"><a class="nav-link fs-5" href="../histoire.html"><i
+                                            class="bi bi-book me-2 d-lg-none"></i>Histoire</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../tournois.html"><i
+                                            class="bi bi-trophy me-2 d-lg-none"></i>Tournois</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../tarifs.html"><i
+                                            class="bi bi-tag me-2 d-lg-none"></i>Tarifs</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../actualites.html"><i
+                                            class="bi bi-newspaper me-2 d-lg-none"></i>Actualités</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="../MLegales.html"></i>Mentions légales</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="../PConfidentialite.html"></i>Politique
+                                        de confidentialité</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
+                                        href="../login.html"></i>Administration</a></li>
                             </ul>
                             <div class="d-flex justify-content-center mb-2 mb-lg-0">
-                                <a href="../contact.html" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
+                                <a href="../contact.html" class="btn-noir px-5 py-2"><span
+                                        class="fs-6 play-bold">Contact</span></a>
                             </div>
                         </div>
+
                     </div>
                 </nav>
             </div>
@@ -58,7 +85,8 @@
         <div class="d-flex justify-content-center align-items-center mb-4">
             <ul class="navbar-nav admin-nav text-center d-flex flex-row gap-5">
                 <li class="nav-item"><a class="nav-link fs-5" href="./AdminHistoire.html">Histoire</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 admin-nav-active" href="./AdminTournois.html">Tournois</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 admin-nav-active" href="./AdminTournois.html">Tournois</a>
+                </li>
                 <li class="nav-item"><a class="nav-link fs-5" href="./AdminTarifs.html">Tarifs</a></li>
                 <li class="nav-item"><a class="nav-link fs-5" href="./AdminActus.html">Actualités</a></li>
             </ul>
@@ -246,4 +274,5 @@
     </script>
 
 </body>
+
 </html>
