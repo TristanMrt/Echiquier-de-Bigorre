@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+
 /* Polices */
 .inter {
     font-family: "Inter", sans-serif;
@@ -117,7 +128,7 @@ header {
 }
 
 .logo-img {
-    height: 87.5px;
+    height: 70px;
     width: auto;
 }
 
