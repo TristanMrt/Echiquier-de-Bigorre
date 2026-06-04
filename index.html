@@ -279,15 +279,16 @@
 <script src="./JS/script.js"></script>
 
 <script>
-    // ===== Affichage des 4 dernières actus dans la section index =====
-    const actusParDefaut = [
-        { titre: 'Vainqueurs de l\'Open', contenu: 'Cette année, c\'est le Pallois Julien Lecocq qui a remporté le tournoi principal.', image: '' },
-        { titre: 'Instagram', contenu: 'Vous pourrez retrouver les actualités et les résultats du club dans les posts ou les storys.', image: '' },
-        { titre: 'Jardin Massey', contenu: 'Retrouvez-nous au Jardin Massey pour des cours d\'échecs le mercredi et le samedi !', image: '' },
-        { titre: 'Nouveau site !', contenu: 'Toutes les informations dont vous avez besoin sont disponibles ici.', image: '' },
-    ];
+async function chargerActusIndex() {
+    let actus = [];
 
-    const actus = JSON.parse(localStorage.getItem('blog_actus')) || actusParDefaut;
+    try {
+        const response = await fetch('./admin/load.php?fichier=actus');
+        actus = await response.json();
+    } catch (error) {}
+
+    if (actus.length === 0) return;
+
     const quatreActus = actus.slice(0, 4);
 
     // --- Carte principale (1ère actu) ---
@@ -328,6 +329,9 @@
         `;
         liensContainer.appendChild(a);
     });
+}
+
+chargerActusIndex();
 </script>
 
 </html>

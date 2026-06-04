@@ -4,14 +4,156 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden;
     max-width: 100%;
 }
 
-main {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+
+/* Code CSS du theme switcher qu'il devait y avoir */
+
+:root {
+    --primary-color: rgb(26, 26, 26);
+    --secondary-color: #F5F0E8;
+    --bois-color: #7B5B3A;
+    --or-color: #C9A84C;
+    --text-black: #3D3D3D;
+    --text-white: #F9F7F4;
+    --btn-noir-hover: #272727;
+    --btn-or-hover: #AB8F42;
+    --btn-white-hover: #E0D7C9;
+    --carte-gradient: linear-gradient(135deg, #5C3D1E 0%, #C9A84C 50%, #5C3D1E 100%);
+    --carte-lien-gradient: linear-gradient(135deg, #5C3D1E 0%, #C9A84C 100%);
+    --hero-overlay: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
+    --histoire-overlay: linear-gradient(to top, rgba(0, 0, 0, 0.95) 10%, rgba(0, 0, 0, 0.2) 55%, rgba(0, 0, 0, 0.1) 100%);
+    --carte-hover-overlay: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+    --carte-lien-hover-overlay: linear-gradient(to left, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 50%);
+    --scrollbar-thumb: #888;
+    --accordion-filter: invert(1);
+}
+
+.hero-overlay {
+    background: var(--hero-overlay);
+}
+
+.histoire-overlay {
+    background: var(--histoire-overlay);
+}
+
+.carte-principale {
+    background: var(--carte-gradient);
+}
+
+.carte-principale:hover::before {
+    background: var(--carte-hover-overlay);
+}
+
+.carte-lien {
+    background: var(--carte-lien-gradient);
+}
+
+.carte-lien:hover::before {
+    background: var(--carte-lien-hover-overlay);
+}
+
+.scroll-custom {
+    scrollbar-color: var(--scrollbar-thumb) var(--primary-color);
+}
+
+.scroll-custom::-webkit-scrollbar-track {
+    background: var(--primary-color);
+}
+
+.scroll-custom::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+}
+
+.accordion-item {
+    background-color: var(--primary-color) !important;
+}
+
+.accordion-button {
+    background-color: var(--primary-color) !important;
+    color: var(--text-white) !important;
+}
+
+.accordion-button::after {
+    filter: var(--accordion-filter);
+}
+
+.accordion-body {
+    background-color: var(--primary-color) !important;
+    color: var(--text-white) !important;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-black);
+}
+
+.bg-custom-primary {
+    background-color: var(--primary-color);
+}
+
+.bg-custom-secondary {
+    background-color: var(--secondary-color);
+}
+
+.bg-custom-bois {
+    background-color: var(--bois-color);
+}
+
+.bg-custom-or {
+    background-color: var(--or-color);
+}
+
+.text-custom-black {
+    color: var(--text-black);
+}
+
+.text-custom-white {
+    color: var(--text-white);
+}
+
+.text-custom-or {
+    color: var(--or-color);
+}
+
+.link-white {
+    color: var(--text-white);
+}
+
+.link-white:hover {
+    color: var(--or-color);
+}
+
+.btn-or {
+    background-color: var(--or-color);
+    color: var(--text-white);
+}
+
+.btn-or:hover {
+    background-color: var(--btn-or-hover);
+}
+
+.btn-noir {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+.btn-noir:hover {
+    background-color: var(--btn-noir-hover);
+}
+
+.btn-white {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-white:hover {
+    background-color: var(--btn-white-hover);
+    color: var(--text-white);
 }
 
 
@@ -315,13 +457,23 @@ header {
 }
 
 @keyframes scrollLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-25%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-25%);
+    }
 }
 
 @keyframes scrollRight {
-    0% { transform: translateX(-25%); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /* Carte principale */
@@ -637,7 +789,9 @@ header {
 }
 
 /* Fix Facebook plugin mobile */
-.fb-page, .fb-page span, .fb-page span iframe {
+.fb-page,
+.fb-page span,
+.fb-page span iframe {
     width: 100% !important;
     max-width: 100% !important;
 }
@@ -807,9 +961,18 @@ header {
 
 
 /* ===================== ADMIN ===================== */
-.admin-nav a { color: var(--text-black); text-decoration: none; }
-.admin-nav a:hover { color: var(--or-color); }
-.admin-nav-active { color: var(--or-color) !important; }
+.admin-nav a {
+    color: var(--text-black);
+    text-decoration: none;
+}
+
+.admin-nav a:hover {
+    color: var(--or-color);
+}
+
+.admin-nav-active {
+    color: var(--or-color) !important;
+}
 
 .admin-table-header {
     display: grid;
@@ -818,7 +981,7 @@ header {
     border: 1px solid var(--text-black);
 }
 
-.admin-table-header > div {
+.admin-table-header>div {
     border: 1px solid var(--text-black);
     padding: 10px;
     font-weight: bold;
@@ -830,7 +993,7 @@ header {
     border: 1px solid var(--text-black);
 }
 
-.admin-section-row > div {
+.admin-section-row>div {
     border: 1px solid var(--text-black);
     padding: 10px;
 }
@@ -844,7 +1007,10 @@ header {
     cursor: pointer;
 }
 
-.btn-add:hover { background: var(--or-color); color: white; }
+.btn-add:hover {
+    background: var(--or-color);
+    color: white;
+}
 
 .btn-delete {
     background: transparent;
@@ -854,7 +1020,9 @@ header {
     font-size: 1.2rem;
 }
 
-.btn-delete:hover { color: red; }
+.btn-delete:hover {
+    color: red;
+}
 
 .champ-admin {
     width: 100%;
@@ -893,4 +1061,3 @@ header {
 .champ-admin-titre::placeholder {
     color: rgba(249, 247, 244, 0.5);
 }
-
