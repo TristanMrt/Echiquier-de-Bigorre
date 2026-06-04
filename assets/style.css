@@ -628,7 +628,28 @@ header {
 
 @media (max-width: 991.98px) {
     .histoire-img {
-        height: 250px;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+.histoire-img-contain {
+    object-fit: contain;
+    object-position: left;
+    background-color: #f5f0e8;
+}
+
+@media (min-width: 1400px) {
+    .histoire-img-contain {
+        object-position: left;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .histoire-img-contain {
+        object-position: center;
     }
 }
 
