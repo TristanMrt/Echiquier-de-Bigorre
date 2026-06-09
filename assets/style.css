@@ -571,6 +571,16 @@ header {
 }
 
 /* HISTOIRE */
+
+.poeme-colonnes {
+    column-count: 2;
+    column-gap: 5rem;
+}
+
+.poeme-colonnes p{
+    break-inside: avoid;
+}
+
 .histoire-card {
     width: 100%;
     max-width: 320px;
