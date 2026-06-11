@@ -203,7 +203,7 @@
                 if (dataCat && dataCat.length > 0) categories = dataCat;
                 if (dataHor && dataHor.length > 0) horaires = dataHor;
                 if (dataLiens && dataLiens.helloasso !== undefined) liens = dataLiens;
-                const resEcole = await fetch('../admin/load.php?fichier=ecole');
+                const resEcole = await fetch('../admin/load.php?fichier=activites');
                 const dataEcole = await resEcole.json();
                 if (dataEcole && dataEcole.texte !== undefined) {
                     document.getElementById('texte-ecole').value = dataEcole.texte;
