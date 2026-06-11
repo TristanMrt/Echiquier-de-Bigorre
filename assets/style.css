@@ -1047,7 +1047,7 @@ header {
     background: transparent;
     border: none;
     cursor: pointer;
-    color: var(--text-black);
+    color: var(--text-white);
     font-size: 1.2rem;
 }
 
@@ -1092,3 +1092,4 @@ header {
 .champ-admin-titre::placeholder {
     color: rgba(249, 247, 244, 0.5);
 }
+
