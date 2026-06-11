@@ -1,17 +1,1 @@
-[
-    {
-        "titre": "Tarifs - Adultes",
-        "lignes": [
-            {"description": "Première année joueur licencié", "prix": "Gratuit"},
-            {"description": "Adultes - Licence A", "prix": "79€"},
-            {"description": "Adultes - Licence B", "prix": "39€"}
-        ]
-    },
-    {
-        "titre": "Tarifs - École d'Échecs",
-        "lignes": [
-            {"description": "Licence Enfants + cours", "prix": "160€"},
-            {"description": "Deuxième enfant d'une même famille", "prix": "90€"}
-        ]
-    }
-]
+[{"titre":"Tarifs - Adultes","lignes":[{"description":"Première année joueur licencié","prix":"Gratuit"},{"description":"Adultes - Licence A","prix":"79€"},{"description":"Adultes - Licence B","prix":"39€"}]},{"titre":"Tarifs - École d'Échecs","lignes":[{"description":"Licence Enfants + cours","prix":"160€"},{"description":"Deuxième enfant d'une même famille","prix":"90€"}]}]

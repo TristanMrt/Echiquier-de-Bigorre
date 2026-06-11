@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-$allowed = ['actus', 'palmares', 'tournois', 'tarifs', 'horaires', 'histoire', 'resultats'];
+$allowed = ['actus', 'palmares', 'tournois', 'tarifs', 'horaires', 'histoire', 'resultats', 'liens_tarifs'];
 
 $fichier = $_GET['fichier'] ?? '';
 

@@ -5,62 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="./assets/img/logo edb.svg">
-    <link rel="stylesheet" href="../assets/bright.css" id="theme-style">
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <title>Admin - Tarifs</title>
 </head>
 
 <body class="inter bg-custom-secondary">
 
-    <!-- ===================== HEADER ===================== -->
     <header>
         <div class="container-fluid col-10">
             <div class="pt-3 pt-md-4">
                 <nav class="navbar navbar-expand-lg navbar-custom px-2 px-md-5 py-3 rounded-4">
                     <div class="container-fluid px-0 d-flex align-items-center">
 
-                        <!-- Logo -->
                         <a class="navbar-brand p-0 me-0" href="../index.html">
                             <img src="../assets/img/logo edb.svg" alt="Logo Échiquier de Bigorre" class="logo-img">
                         </a>
 
-                        <!-- Burger button (visible on mobile) -->
                         <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
                             aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon burger-color"></span>
                         </button>
 
-                        <!-- Nav links + CTA (collapse on mobile) -->
                         <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarMenu">
-                            <ul
-                                class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
-                                <li class="nav-item"><a class="nav-link fs-5" href="../histoire.html"><i
-                                            class="bi bi-book me-2 d-lg-none"></i>Histoire</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="../tournois.html"><i
-                                            class="bi bi-trophy me-2 d-lg-none"></i>Tournois</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="../tarifs.html"><i
-                                            class="bi bi-tag me-2 d-lg-none"></i>Tarifs</a></li>
-                                <li class="nav-item"><a class="nav-link fs-5" href="../actualites.html"><i
-                                            class="bi bi-newspaper me-2 d-lg-none"></i>Actualités</a></li>
-                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
-                                        href="../MLegales.html"></i>Mentions légales</a></li>
-                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
-                                        href="../PConfidentialite.html"></i>Politique
-                                        de confidentialité</a></li>
-                                <li class="nav-item d-lg-none"><a class="nav-link fs-6"
-                                        href="../login.html"></i>Administration</a></li>
+                            <ul class="navbar-nav mx-auto d-flex flex-column flex-lg-row gap-2 gap-lg-5 mb-3 mb-lg-0 text-center">
+                                <li class="nav-item"><a class="nav-link fs-5" href="../histoire.html"><i class="bi bi-book me-2 d-lg-none"></i>Histoire</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../tournois.html"><i class="bi bi-trophy me-2 d-lg-none"></i>Tournois</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../tarifs.html"><i class="bi bi-tag me-2 d-lg-none"></i>Tarifs</a></li>
+                                <li class="nav-item"><a class="nav-link fs-5" href="../actualites.html"><i class="bi bi-newspaper me-2 d-lg-none"></i>Actualités</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6" href="../MLegales.html">Mentions légales</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6" href="../PConfidentialite.html">Politique de confidentialité</a></li>
+                                <li class="nav-item d-lg-none"><a class="nav-link fs-6" href="../login.html">Administration</a></li>
                             </ul>
                             <div class="d-flex justify-content-center mb-2 mb-lg-0">
-                                <a href="../contact.html" class="btn-noir px-5 py-2"><span
-                                        class="fs-6 play-bold">Contact</span></a>
+                                <a href="../contact.html" class="btn-noir px-5 py-2"><span class="fs-6 play-bold">Contact</span></a>
                             </div>
                         </div>
 
@@ -71,7 +54,6 @@
     </header>
 
     <main>
-        <!-- Titre -->
         <div class="espace-sommaire">
             <div class="mt-5 pt-5">
                 <div class="row justify-content-center">
@@ -82,7 +64,6 @@
             </div>
         </div>
 
-        <!-- Nav admin -->
         <div class="d-flex justify-content-center align-items-center mb-4">
             <ul class="navbar-nav admin-nav text-center d-flex flex-row gap-5">
                 <li class="nav-item"><a class="nav-link fs-5" href="./AdminHistoire.html">Histoire</a></li>
@@ -92,26 +73,48 @@
             </ul>
         </div>
 
-        <!-- Zone d'édition -->
         <div class="d-flex align-items-center justify-content-center mb-5">
             <div class="bg-custom-primary py-4 px-4 col-10 col-lg-8 d-flex flex-column gap-4">
 
-                <!-- Bouton ajouter catégorie -->
                 <div class="d-flex justify-content-center">
                     <button class="btn-add px-5" onclick="ajouterCategorie()">Ajouter une catégorie</button>
                 </div>
 
-                <!-- Catégories -->
                 <div id="categoriesContainer"></div>
 
-                <!-- Horaires -->
                 <div class="mt-4">
                     <h2 class="play-bold text-custom-white fs-4 mb-3">Horaires</h2>
                     <div id="horairesContainer" class="d-flex flex-column gap-2"></div>
                     <button class="btn-add mt-2" onclick="ajouterHoraire()">+</button>
                 </div>
 
-                <!-- Sauvegarder -->
+                <!-- Liens HelloAsso et PDF -->
+                <div class="mt-4">
+                    <h2 class="play-bold text-custom-white fs-4 mb-3">Liens d'inscription</h2>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="admin-section-row" style="grid-template-columns: 150px 1fr;">
+                            <div class="d-flex align-items-center px-2">
+                                <span class="text-custom-white fs-6">HelloAsso</span>
+                            </div>
+                            <div>
+                                <input class="champ-admin" type="text" id="lien-helloasso" placeholder="https://www.helloasso.com/...">
+                            </div>
+                        </div>
+                        <div class="admin-section-row" style="grid-template-columns: 150px 1fr 150px;">
+                            <div class="d-flex align-items-center px-2">
+                                <span class="text-custom-white fs-6">PDF inscription</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <input type="file" accept=".pdf" id="input-pdf" class="champ-admin" style="color: var(--text-white);">
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <button class="btn-or px-3 py-1 fs-6" onclick="uploaderPDF()">Uploader</button>
+                            </div>
+                        </div>
+                        <div id="pdf-status" class="text-custom-white fs-6 mt-2"></div>
+                    </div>
+                </div>
+
                 <div class="d-flex justify-content-end mt-3">
                     <button class="btn-or px-5 py-2 fs-6 play-bold" onclick="sauvegarder()">
                         <span>Sauvegarder</span>
@@ -154,18 +157,29 @@
 
         let categories = categoriesParDefaut;
         let horaires = horairesParDefaut;
+        let liens = { helloasso: '', pdf: false };
 
         async function chargerDonnees() {
             try {
-                const [resCat, resHor] = await Promise.all([
+                const [resCat, resHor, resLiens] = await Promise.all([
                     fetch('../admin/load.php?fichier=tarifs'),
-                    fetch('../admin/load.php?fichier=horaires')
+                    fetch('../admin/load.php?fichier=horaires'),
+                    fetch('../admin/load.php?fichier=liens_tarifs')
                 ]);
                 const dataCat = await resCat.json();
                 const dataHor = await resHor.json();
+                const dataLiens = await resLiens.json();
                 if (dataCat && dataCat.length > 0) categories = dataCat;
                 if (dataHor && dataHor.length > 0) horaires = dataHor;
-            } catch (error) { }
+                if (dataLiens && dataLiens.helloasso !== undefined) liens = dataLiens;
+            } catch (error) {}
+
+            document.getElementById('lien-helloasso').value = liens.helloasso || '';
+            if (liens.pdf) {
+                document.getElementById('pdf-status').textContent = '✓ Un PDF est déjà uploadé';
+                document.getElementById('pdf-status').style.color = 'green';
+            }
+
             renderCategories();
             renderHoraires();
         }
@@ -177,18 +191,18 @@
                 const div = document.createElement('div');
                 div.className = 'mb-4';
                 div.innerHTML = `
-            <div class="d-flex align-items-center gap-3 mb-2">
-                <input class="champ-admin sous-titre fst-italic fs-5 text-custom-white" type="text" value="${cat.titre}" placeholder="Nom de la catégorie" onchange="categories[${catIndex}].titre = this.value">
-                <button class="btn-delete" onclick="supprimerCategorie(${catIndex})"><i class="bi bi-trash"></i></button>
-                <button class="btn-delete" onclick="monterCategorie(${catIndex})"><i class="bi bi-chevron-up"></i></button>
-                <button class="btn-delete" onclick="descendreCategorie(${catIndex})"><i class="bi bi-chevron-down"></i></button>
-            </div>
-            <div class="admin-table-header" style="grid-template-columns: 1fr 120px 50px 50px;">
-                <div>Description</div><div>Prix</div><div></div><div></div>
-            </div>
-            <div id="lignes-${catIndex}"></div>
-            <button class="btn-add mt-2" onclick="ajouterLigne(${catIndex})">+</button>
-        `;
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <input class="champ-admin sous-titre fst-italic fs-5 text-custom-white" type="text" value="${cat.titre}" placeholder="Nom de la catégorie" onchange="categories[${catIndex}].titre = this.value">
+                        <button class="btn-delete" onclick="supprimerCategorie(${catIndex})"><i class="bi bi-trash"></i></button>
+                        <button class="btn-delete" onclick="monterCategorie(${catIndex})"><i class="bi bi-chevron-up"></i></button>
+                        <button class="btn-delete" onclick="descendreCategorie(${catIndex})"><i class="bi bi-chevron-down"></i></button>
+                    </div>
+                    <div class="admin-table-header" style="grid-template-columns: 1fr 120px 50px 50px;">
+                        <div>Description</div><div>Prix</div><div></div><div></div>
+                    </div>
+                    <div id="lignes-${catIndex}"></div>
+                    <button class="btn-add mt-2" onclick="ajouterLigne(${catIndex})">+</button>
+                `;
                 container.appendChild(div);
                 renderLignes(catIndex);
             });
@@ -202,18 +216,18 @@
                 row.className = 'admin-section-row';
                 row.style.gridTemplateColumns = '1fr 120px 50px 50px';
                 row.innerHTML = `
-            <div class="d-flex align-items-center gap-2">
-                <i class="bi bi-pencil text-custom-white"></i>
-                <input class="champ-admin" type="text" value="${ligne.description}" placeholder="Description...">
-            </div>
-            <div><input class="champ-admin" type="text" value="${ligne.prix}" placeholder="Prix..."></div>
-            <div class="d-flex align-items-center justify-content-center">
-                <button class="btn-delete" onclick="supprimerLigne(${catIndex}, ${ligneIndex})"><i class="bi bi-trash"></i></button>
-            </div>
-            <div class="d-flex align-items-center justify-content-center">
-                <button class="btn-delete" onclick="monterLigne(${catIndex}, ${ligneIndex})"><i class="bi bi-chevron-up"></i></button>
-            </div>
-        `;
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-pencil text-custom-white"></i>
+                        <input class="champ-admin" type="text" value="${ligne.description}" placeholder="Description...">
+                    </div>
+                    <div><input class="champ-admin" type="text" value="${ligne.prix}" placeholder="Prix..."></div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button class="btn-delete" onclick="supprimerLigne(${catIndex}, ${ligneIndex})"><i class="bi bi-trash"></i></button>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button class="btn-delete" onclick="monterLigne(${catIndex}, ${ligneIndex})"><i class="bi bi-chevron-up"></i></button>
+                    </div>
+                `;
                 container.appendChild(row);
             });
         }
@@ -264,11 +278,11 @@
                 row.className = 'admin-section-row';
                 row.style.gridTemplateColumns = '1fr 50px';
                 row.innerHTML = `
-            <div><input class="champ-admin" type="text" value="${h.texte}" placeholder="Horaire..."></div>
-            <div class="d-flex align-items-center justify-content-center">
-                <button class="btn-delete" onclick="supprimerHoraire(${index})"><i class="bi bi-trash"></i></button>
-            </div>
-        `;
+                    <div><input class="champ-admin" type="text" value="${h.texte}" placeholder="Horaire..."></div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button class="btn-delete" onclick="supprimerHoraire(${index})"><i class="bi bi-trash"></i></button>
+                    </div>
+                `;
                 container.appendChild(row);
             });
         }
@@ -281,6 +295,33 @@
         function supprimerHoraire(index) {
             horaires.splice(index, 1);
             renderHoraires();
+        }
+
+        async function uploaderPDF() {
+            const input = document.getElementById('input-pdf');
+            if (!input.files || input.files.length === 0) {
+                alert('Veuillez sélectionner un fichier PDF');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('pdf', input.files[0]);
+
+            try {
+                const response = await fetch('../admin/upload.php', { method: 'POST', body: formData });
+                const data = await response.json();
+                if (data.success) {
+                    liens.pdf = true;
+                    document.getElementById('pdf-status').textContent = '✓ PDF uploadé avec succès';
+                    document.getElementById('pdf-status').style.color = 'green';
+                } else {
+                    document.getElementById('pdf-status').textContent = '✗ ' + data.message;
+                    document.getElementById('pdf-status').style.color = 'red';
+                }
+            } catch (error) {
+                document.getElementById('pdf-status').textContent = '✗ Erreur de connexion';
+                document.getElementById('pdf-status').style.color = 'red';
+            }
         }
 
         async function sauvegarder() {
@@ -298,13 +339,16 @@
                 horaires[index].texte = row.querySelector('input').value;
             });
 
+            liens.helloasso = document.getElementById('lien-helloasso').value;
+
             try {
-                const [resCat, resHor] = await Promise.all([
+                const [resCat, resHor, resLiens] = await Promise.all([
                     fetch('../admin/save.php', { method: 'POST', body: (() => { const f = new FormData(); f.append('fichier', 'tarifs'); f.append('donnees', JSON.stringify(categories)); return f; })() }),
-                    fetch('../admin/save.php', { method: 'POST', body: (() => { const f = new FormData(); f.append('fichier', 'horaires'); f.append('donnees', JSON.stringify(horaires)); return f; })() })
+                    fetch('../admin/save.php', { method: 'POST', body: (() => { const f = new FormData(); f.append('fichier', 'horaires'); f.append('donnees', JSON.stringify(horaires)); return f; })() }),
+                    fetch('../admin/save.php', { method: 'POST', body: (() => { const f = new FormData(); f.append('fichier', 'liens_tarifs'); f.append('donnees', JSON.stringify(liens)); return f; })() })
                 ]);
-                const [r1, r2] = await Promise.all([resCat.json(), resHor.json()]);
-                alert(r1.success && r2.success ? 'Sauvegardé !' : 'Erreur lors de la sauvegarde.');
+                const [r1, r2, r3] = await Promise.all([resCat.json(), resHor.json(), resLiens.json()]);
+                alert(r1.success && r2.success && r3.success ? 'Sauvegardé !' : 'Erreur lors de la sauvegarde.');
             } catch (error) {
                 alert('Erreur de connexion au serveur.');
             }
@@ -314,5 +358,4 @@
     </script>
 
 </body>
-
 </html>
