@@ -384,7 +384,7 @@
                     fetch('../admin/save.php', { method: 'POST', body: (() => { const f = new FormData(); f.append('fichier', 'tarifs'); f.append('donnees', JSON.stringify(categories)); return f; })() }),
                     fetch('../admin/save.php', { method: 'POST', body: (() => { const f = new FormData(); f.append('fichier', 'horaires'); f.append('donnees', JSON.stringify(horaires)); return f; })() }),
                     fetch('../admin/save.php', { method: 'POST', body: (() => { const f = new FormData(); f.append('fichier', 'liens_tarifs'); f.append('donnees', JSON.stringify(liens)); return f; })() }),
-                    fetch('../admin/save.php', { method: 'POST', body: (() => { const f = new FormData(); f.append('fichier', 'ecole'); f.append('donnees', JSON.stringify({ texte: document.getElementById('texte-ecole').value })); return f; })() })
+                    fetch('../admin/save.php', { method: 'POST', body: (() => { const f = new FormData(); f.append('fichier', 'activites'); f.append('donnees', JSON.stringify({ texte: document.getElementById('texte-ecole').value })); return f; })() })
                 ]);
                 const [r1, r2, r3] = await Promise.all([resCat.json(), resHor.json(), resLiens.json()]);
                 alert(r1.success && r2.success && r3.success ? 'Sauvegardé !' : 'Erreur lors de la sauvegarde.');

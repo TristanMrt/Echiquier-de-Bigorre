@@ -197,7 +197,7 @@
 
         async function chargerEcole() {
             try {
-                const response = await fetch('./admin/load.php?fichier=ecole');
+                const response = await fetch('./admin/load.php?fichier=activites');
                 const data = await response.json();
                 if (data && data.texte) {
                     document.getElementById('texte-ecole').innerHTML = data.texte;
