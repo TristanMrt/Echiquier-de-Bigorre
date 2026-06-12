@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
-$allowed = ['actus', 'palmares', 'tournois', 'tarifs', 'horaires', 'histoire', 'resultats', 'liens_tarifs', 'ecole'];
+$allowed = ['actus', 'palmares', 'tournois', 'tarifs', 'horaires', 'histoire', 'resultats', 'liens_tarifs', 'activites'];
 
 $fichier = $_POST['fichier'] ?? '';
 $donnees = $_POST['donnees'] ?? '';
